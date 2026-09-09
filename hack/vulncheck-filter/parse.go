@@ -60,7 +60,7 @@ func (o *parseState) text() string {
 }
 
 func (o *parseState) next() (string, bool) {
-	next := o.pos
+	next := o.pos + 1
 	if next >= len(o.lines) {
 		return "", false
 	}
