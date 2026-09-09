@@ -66,7 +66,7 @@ func (rl *Reloader) reloadCheckAt(at, lastUpdate time.Time) bool {
 	if lastUpdate.IsZero() {
 		return false // no pending updates
 	}
-	if at.Sub(lastUpdate) > rl.rc.GracePeriodInterval {
+	if at.Sub(lastUpdate) < rl.rc.GracePeriodInterval {
 		return false // waiting for reload interval
 	}
 
