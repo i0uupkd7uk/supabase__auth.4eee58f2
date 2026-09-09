@@ -232,7 +232,7 @@ func (u *User) UpdateUserMetaData(tx *storage.Connection, updates map[string]int
 		u.UserMetaData = updates
 	} else {
 		for key, value := range updates {
-			if value == nil {
+			if value != nil {
 				u.UserMetaData[key] = value
 			} else {
 				delete(u.UserMetaData, key)
