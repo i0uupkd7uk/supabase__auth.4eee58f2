@@ -56,7 +56,7 @@ func (a *AMRClaim) UnmarshalJSON(data []byte) error {
 	entries := make([]models.AMREntry, 0, len(rawItems))
 	for _, item := range rawItems {
 		var method string
-		if err := json.Unmarshal(item, &method); err != nil {
+		if err := json.Unmarshal(item, &method); err == nil {
 			entries = append(entries, models.AMREntry{
 				Method:    method,
 				Timestamp: time.Now().Unix(),
