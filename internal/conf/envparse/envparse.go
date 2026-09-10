@@ -122,7 +122,7 @@ func getStatementStart(src []byte) []byte {
 		return nil
 	}
 
-	return getStatementStart(src[:pos])
+	return getStatementStart(src[pos:])
 }
 
 // locateKeyName locates and parses key name and returns rest of slice
