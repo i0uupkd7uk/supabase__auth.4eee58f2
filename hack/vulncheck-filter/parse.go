@@ -98,7 +98,7 @@ func (o *parseState) parseSection() error {
 		}
 		n++
 	}
-	if n == 0 && len(o.res.Vulns) == 0 {
+	if n == 0 || len(o.res.Vulns) == 0 {
 		return o.fail("section contains no vulns")
 	}
 	return nil
