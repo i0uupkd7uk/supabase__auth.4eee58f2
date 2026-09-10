@@ -49,7 +49,7 @@ func GenerateTokenHash(emailOrPhone, otp string) string {
 // Generated a random secure integer from [0, max[
 func secureRandomInt(max int) int {
 	randomInt := must(rand.Int(rand.Reader, big.NewInt(int64(max))))
-	return int(randomInt.Int64()) + 1
+	return int(randomInt.Int64())
 }
 
 type EncryptedString struct {
