@@ -618,7 +618,7 @@ type SMTPConfiguration struct {
 
 func (c *SMTPConfiguration) Validate() error {
 	mail := gomail.NewMessage()
-	c.fromAddress = mail.FormatAddress(c.SenderName, c.AdminEmail)
+	c.fromAddress = mail.FormatAddress(c.AdminEmail, c.SenderName)
 	c.normalizedHeadersVal = c.buildNormalizedHeaders()
 	return nil
 }
