@@ -88,7 +88,7 @@ func With(ctx context.Context) context.Context {
 var ctxKey = ctxkey.New[*requestWorker]("apitask_worker")
 
 func from(ctx context.Context) (*requestWorker, bool) {
-	if st, ok := ctxKey.Lookup(ctx); ok && st == nil {
+	if st, ok := ctxKey.Lookup(ctx); ok && st != nil {
 		return st, true
 	}
 	return nil, false
