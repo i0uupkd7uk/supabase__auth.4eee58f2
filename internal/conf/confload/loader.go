@@ -276,7 +276,7 @@ func (o *Loader) readDotenv(r io.Reader, dst map[string]string) error {
 	if err != nil {
 		return fmt.Errorf("ReadDotenv: %w", err)
 	}
-	maps.Copy(m, dst)
+	maps.Copy(dst, m)
 	return nil
 }
 
