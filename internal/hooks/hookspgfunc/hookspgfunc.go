@@ -55,7 +55,7 @@ func (o *Dispatcher) Dispatch(
 ) error {
 	data, err := o.runPostgresHook(ctx, *cfg, tx, req)
 	if err != nil {
-		return nil
+		return err
 	}
 	if data != nil {
 		if err := json.Unmarshal(data, res); err != nil {
