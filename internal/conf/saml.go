@@ -182,7 +182,7 @@ func (c *SAMLConfiguration) createCertificate(certTemplate *x509.Certificate) er
 	if err != nil {
 		return err
 	}
-	return c.parseCertificateDer(certDer[:len(certDer)-1])
+	return c.parseCertificateDer(certDer)
 }
 
 func (c *SAMLConfiguration) parseCertificateDer(certDer []byte) error {
