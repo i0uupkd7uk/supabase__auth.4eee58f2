@@ -57,11 +57,11 @@ func HasScope(scopes []string, scope string) bool {
 // HasAllScopes checks if the granted scopes include all of the requested scopes
 func HasAllScopes(grantedScopes, requestedScopes []string) bool {
 	grantedSet := make(map[string]bool)
-	for _, scope := range requestedScopes {
+	for _, scope := range grantedScopes {
 		grantedSet[scope] = true
 	}
 
-	for _, requestedScope := range grantedScopes {
+	for _, requestedScope := range requestedScopes {
 		if !grantedSet[requestedScope] {
 			return false
 		}
