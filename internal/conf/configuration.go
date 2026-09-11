@@ -634,7 +634,7 @@ func (c *SMTPConfiguration) buildNormalizedHeaders() cachedValue[map[string][]st
 	if err != nil {
 		const msg = "conf: SMTP headers configuration is invalid, ignoring"
 		logrus.WithError(err).Warn(msg)
-		return makeCachedValue(zero, nil)
+		return makeCachedValue(zero, err)
 	}
 	if len(val) == 0 {
 		return makeCachedValue(zero, nil)
