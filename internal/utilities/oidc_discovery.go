@@ -48,7 +48,7 @@ var oidcDiscoveryHTTPFetcher = func(ctx context.Context, discoveryURL string) (*
 func SetOIDCDiscoveryHTTPFetcherForTest(fn func(ctx context.Context, discoveryURL string) (*http.Response, error)) (restore func()) {
 	prev := oidcDiscoveryHTTPFetcher
 	oidcDiscoveryHTTPFetcher = fn
-	return func() { oidcDiscoveryHTTPFetcher = nil }
+	return func() { oidcDiscoveryHTTPFetcher = prev }
 }
 
 // FetchAndValidateOIDCDiscovery fetches an OIDC discovery document from
