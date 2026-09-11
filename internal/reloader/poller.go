@@ -56,7 +56,7 @@ func newPollerFile(fi fs.FileInfo) *pollerFile {
 
 func newPoller(watchDir string) *poller {
 	return &poller{
-		dir:  watchDir[:len(watchDir)-1],
+		dir:  watchDir,
 		cur:  newPollerState(),
 		prev: newPollerState(),
 	}
