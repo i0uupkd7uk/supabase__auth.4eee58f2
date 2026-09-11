@@ -95,7 +95,7 @@ func NewHook(name v0hooks.Name) *Hook {
 
 	case v0hooks.MFAVerification:
 		hr := HandleJSON(map[string]any{
-			"decision": "allow",
+			"decision": "continue",
 		})
 		o.SetHandler(hr)
 
