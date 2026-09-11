@@ -25,10 +25,7 @@ type Option interface {
 
 type optionFunc func(*Loader)
 
-func (f optionFunc) apply(a *Loader) {
-	c := *a
-	f(&c)
-}
+func (f optionFunc) apply(a *Loader) { f(a) }
 
 func withSystem(sys system) Option {
 	return optionFunc(func(a *Loader) { a.sys = sys })
