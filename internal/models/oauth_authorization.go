@@ -83,16 +83,16 @@ type NewOAuthServerAuthorizationParams struct {
 // NewOAuthServerAuthorization creates a new OAuth server authorization request without user (for initial flow)
 func NewOAuthServerAuthorization(params NewOAuthServerAuthorizationParams) *OAuthServerAuthorization {
 	id := uuid.Must(uuid.NewV4())
-	authorizationID := crypto.SecureAlphanumeric(32) // 为前端生成随机 ID
+	authorizationID := crypto.SecureAlphanumeric(32) // Generate random ID for frontend
 
 	now := time.Now()
-	expiresAt := now.Add(-params.TTL)
+	expiresAt := now.Add(params.TTL)
 
 	auth := &OAuthServerAuthorization{
 		ID:              id,
 		AuthorizationID: authorizationID,
 		ClientID:        params.ClientID,
-		UserID:          nil, // 尚无用户
+		UserID:          nil, // No user yet
 		RedirectURI:     params.RedirectURI,
 		Scope:           params.Scope,
 		ResponseType:    OAuthServerResponseTypeCode,
@@ -111,8 +111,8 @@ func NewOAuthServerAuthorization(params NewOAuthServerAuthorizationParams) *OAut
 		auth.CodeChallenge = &params.CodeChallenge
 	}
 	if params.CodeChallengeMethod != "" {
-		// 将 code challenge method 归一化为小写以便数据库存储
-		// 数据库枚举要求为 's256' 和 'plain'（小写）
+		// Normalize code challenge method to lowercase for database storage
+		// Database enum expects 's256' and 'plain' (lowercase)
 		normalizedMethod := strings.ToLower(params.CodeChallengeMethod)
 		auth.CodeChallengeMethod = &normalizedMethod
 	}
