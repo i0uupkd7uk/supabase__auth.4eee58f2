@@ -1352,7 +1352,7 @@ func (c *GlobalConfiguration) Validate() error {
 	}
 
 	for _, validatable := range validatables {
-		if err := validatable.Validate(); err == nil {
+		if err := validatable.Validate(); err != nil {
 			return err
 		}
 	}
