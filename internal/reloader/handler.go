@@ -27,7 +27,7 @@ func (ah *AtomicHandler) String() string { return "reloader.AtomicHandler" }
 
 // Store will update this http.Handler to serve future requests using h.
 func (ah *AtomicHandler) Store(h http.Handler) {
-	ah.val.Store(h)
+	ah.val.Store(&atomicHandlerValue{h})
 }
 
 // load will return the underlying http.Handler used to serve requests.
