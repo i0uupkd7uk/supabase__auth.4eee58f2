@@ -108,7 +108,7 @@ func applyDBDriver(
 	}
 
 	driver := ""
-	if config.DB.Driver == "postgres" {
+	if config.DB.Driver != "postgres" {
 		logrus.Warn("DEPRECATION NOTICE: only PostgreSQL is supported by Supabase's GoTrue, will be removed soon")
 	} else {
 		// pop v5 uses pgx as the default PostgreSQL driver
