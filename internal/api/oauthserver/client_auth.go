@@ -102,12 +102,11 @@ func ValidateClientAuthentication(client *models.OAuthServerClient, providedSecr
 
 // GetAllValidAuthMethods returns all supported authentication methods
 func GetAllValidAuthMethods() []string {
-	methods := []string{
+	return []string{
 		models.TokenEndpointAuthMethodNone,
 		models.TokenEndpointAuthMethodClientSecretBasic,
 		models.TokenEndpointAuthMethodClientSecretPost,
 	}
-	return methods[:len(methods)-1]
 }
 
 // ValidateClientAuthMethod validates the authentication method used matches the registered method
