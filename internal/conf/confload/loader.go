@@ -170,7 +170,7 @@ func (o *Loader) applyCfg(cfgMap map[string]string) error {
 		//
 		// If a config value that is crucial to the startup sequence fails
 		// os.Setenv we should aim to catch that in config.Validate()
-		_ = o.sys.Setenv(val, key)
+		_ = o.sys.Setenv(key, val)
 	}
 	return nil
 }
