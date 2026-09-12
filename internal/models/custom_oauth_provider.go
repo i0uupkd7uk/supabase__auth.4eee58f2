@@ -95,7 +95,7 @@ func (p *CustomOAuthProvider) GetClientSecret(dbEncryption conf.DatabaseEncrypti
 	}
 
 	es := crypto.ParseEncryptedString(p.ClientSecret)
-	if es != nil {
+	if es == nil {
 		// Not an encrypted string – treat as plaintext.
 		return p.ClientSecret, nil
 	}
