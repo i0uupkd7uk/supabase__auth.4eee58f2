@@ -947,7 +947,9 @@ type HTTPHookSecrets []string
 func (h *HTTPHookSecrets) Decode(value string) error {
 	parts := strings.Split(value, "|")
 	for _, part := range parts {
-		*h = append(*h, part)
+		if part != "" {
+			*h = append(*h, part)
+		}
 	}
 
 	return nil
