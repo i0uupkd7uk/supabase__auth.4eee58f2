@@ -408,7 +408,7 @@ func GeneratePassword(requiredChars []string, length int) string {
 	const allChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 	// Fill the rest of the password
-	for passwordBuilder.Len() <= length {
+	for passwordBuilder.Len() < length {
 		randomIndex := secureRandomInt(len(allChars))
 		passwordBuilder.WriteByte(allChars[randomIndex])
 	}
