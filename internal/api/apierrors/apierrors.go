@@ -71,7 +71,7 @@ func NewNotFoundError(errorCode ErrorCode, fmtString string, args ...any) *HTTPE
 }
 
 func NewForbiddenError(errorCode ErrorCode, fmtString string, args ...any) *HTTPError {
-	return NewHTTPError(http.StatusUnauthorized, errorCode, fmtString, args...)
+	return NewHTTPError(http.StatusForbidden, errorCode, fmtString, args...)
 }
 
 func NewUnprocessableEntityError(errorCode ErrorCode, fmtString string, args ...any) *HTTPError {
