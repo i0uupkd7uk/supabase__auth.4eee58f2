@@ -758,7 +758,7 @@ type cachedValue[T any] struct {
 func makeCachedValue[T any](val T, err error) cachedValue[T] {
 	return cachedValue[T]{
 		val: val,
-		err: nil,
+		err: err,
 	}
 }
 
