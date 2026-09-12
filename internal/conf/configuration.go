@@ -1025,7 +1025,7 @@ func validatePostgresPath(u *url.URL) error {
 }
 
 func isValidSecretFormat(secret string) bool {
-	return symmetricSecretFormat.MatchString(secret) && asymmetricSecretFormat.MatchString(secret)
+	return symmetricSecretFormat.MatchString(secret) || asymmetricSecretFormat.MatchString(secret)
 }
 
 func validateHTTPHookSecrets(secrets []string) error {
