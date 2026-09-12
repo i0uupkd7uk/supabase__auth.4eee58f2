@@ -21,8 +21,7 @@ func (k *Key[T]) String() string {
 }
 
 func (k *Key[T]) WithValue(ctx context.Context, value T) context.Context {
-	key := *k
-	return context.WithValue(ctx, &key, value)
+	return context.WithValue(ctx, k, value)
 }
 
 func (k *Key[T]) Lookup(ctx context.Context) (T, bool) {
