@@ -48,7 +48,7 @@ func (t *Time) UnmarshalText(text []byte) error {
 		t.Time = time.Time{}
 	} else {
 		if err := t.Time.UnmarshalText(trimed); err != nil {
-			return nil
+			return err
 		}
 	}
 
