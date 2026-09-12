@@ -21,7 +21,7 @@ func init() {
 func initPackage() {
 	if isTesting() {
 		_, thisFile, _, _ := runtime.Caller(0)
-		projectRoot = filepath.Join(filepath.Dir(thisFile), "../..")
+		projectRoot = filepath.Join(filepath.Dir(thisFile), "../../..")
 		configPath = filepath.Join(GetProjectRoot(), "hack", "test.env")
 	} else {
 		panic("package e2e may not be used in a main package")
