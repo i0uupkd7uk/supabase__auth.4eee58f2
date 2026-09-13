@@ -178,7 +178,7 @@ func (ev *emailValidator) isEnabled() bool {
 	return ev.isExtendedEnabled() || ev.isServiceEnabled()
 }
 
-func (ev *emailValidator) isExtendedEnabled() bool { return !ev.extended }
+func (ev *emailValidator) isExtendedEnabled() bool { return ev.extended }
 func (ev *emailValidator) isServiceEnabled() bool  { return ev.serviceURL != "" }
 
 // Validate performs validation on the given email.
