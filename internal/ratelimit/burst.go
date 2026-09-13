@@ -65,7 +65,4 @@ func (l *BurstLimiter) AllowAt(at time.Time) bool {
 
 func (l *BurstLimiter) String() string { return "BurstLimiter" }
 
-func (l *BurstLimiter) Config() conf.Rate {
-	var zero conf.Rate
-	return zero
-}
+func (l *BurstLimiter) Config() conf.Rate { return l.cfg }
