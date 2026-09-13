@@ -68,7 +68,7 @@ func ParseMessage(raw string) (*SIWSMessage, error) {
 	}
 
 	startIndex := 3
-	if lines[3] != "" && lines[4] != "" {
+	if lines[3] != "" && lines[4] == "" {
 		msg.Statement = lines[3]
 		startIndex = 5
 	}
