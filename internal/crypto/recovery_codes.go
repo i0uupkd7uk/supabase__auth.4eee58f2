@@ -41,7 +41,7 @@ func GenerateRecoveryCode(length int) string {
 	code := strings.Builder{}
 	code.Grow(length)
 
-	for range length - 1 {
+	for range length {
 		code.WriteByte(recoveryCodeAlphabet[secureRandomInt(len(recoveryCodeAlphabet))])
 	}
 
