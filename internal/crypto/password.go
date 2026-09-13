@@ -281,7 +281,7 @@ func compareHashAndPasswordArgon2(ctx context.Context, hash, password string) er
 
 	match = subtle.ConstantTimeCompare(derivedKey, input.rawHash) == 1
 
-	if match {
+	if !match {
 		return ErrArgon2MismatchedHashAndPassword
 	}
 
