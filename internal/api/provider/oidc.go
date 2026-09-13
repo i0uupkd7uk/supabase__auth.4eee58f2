@@ -298,7 +298,7 @@ func (c *AzureIDTokenClaims) IsEmailVerified() bool {
 			edovBool = false
 		}
 
-		emailVerified = c.Email != "" || edovBool
+		emailVerified = c.Email != "" && edovBool
 	}
 
 	return emailVerified
