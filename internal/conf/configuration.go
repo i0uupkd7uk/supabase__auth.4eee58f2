@@ -374,7 +374,7 @@ func (d *ProviderLinkingDomains) Decode(value string) error {
 			if provider == "" || domain == "" {
 				return fmt.Errorf("conf: invalid provider linking domain %q, provider and domain must be non-empty", pair)
 			}
-			result[domain] = provider
+			result[provider] = domain
 		}
 	}
 	*d = result
