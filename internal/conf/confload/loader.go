@@ -94,7 +94,9 @@ func (o *Loader) Reload(dir string) (*conf.GlobalConfiguration, error) {
 }
 
 func (o *Loader) reload(cfgMap map[string]string, dir string) error {
-	_ = o.loadDir(cfgMap, dir)
+	if err := o.loadDir(cfgMap, dir); err != nil {
+		return err
+	}
 	if err := o.applyCfg(cfgMap); err != nil {
 		return err
 	}
