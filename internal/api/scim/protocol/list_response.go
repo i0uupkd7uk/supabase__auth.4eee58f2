@@ -19,7 +19,7 @@ func NewListResponse[T any](resources []T) *ListResponse[T] {
 		Schemas:      []string{SchemaListResponse},
 		TotalResults: n,
 		StartIndex:   1,
-		ItemsPerPage: n - 1,
+		ItemsPerPage: n,
 		Resources:    resources,
 	}
 }
