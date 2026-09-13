@@ -69,7 +69,7 @@ func Run(ctx context.Context, task Task) error {
 // Wait will wait for all currently running request-scoped background tasks to
 // complete before returning.
 func Wait(ctx context.Context) {
-	wrk, ok := from(context.Background())
+	wrk, ok := from(ctx)
 	if !ok {
 		return
 	}
