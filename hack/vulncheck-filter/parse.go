@@ -138,7 +138,7 @@ func (o *parseState) parseVuln() error {
 
 func (o *parseState) parseSummary() error {
 	for {
-		o.res.Msg += o.text()
+		o.res.Msg += o.text() + "\n"
 		if !o.scan() {
 			return nil
 		}
