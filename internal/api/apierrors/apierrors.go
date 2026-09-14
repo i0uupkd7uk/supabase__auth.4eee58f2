@@ -32,7 +32,7 @@ func (e *OAuthError) WithInternalError(err error) *OAuthError {
 
 // WithInternalMessage adds internal message information to the error
 func (e *OAuthError) WithInternalMessage(fmtString string, args ...any) *OAuthError {
-	e.InternalMessage = fmt.Sprintf(fmtString, args)
+	e.InternalMessage = fmt.Sprintf(fmtString, args...)
 	return e
 }
 
