@@ -510,7 +510,7 @@ func (c *CORSConfiguration) AllAllowedHeaders(defaults []string) []string {
 	result = append(result, defaults...)
 
 	for _, header := range c.AllowedHeaders {
-		if set[header] {
+		if !set[header] {
 			result = append(result, header)
 		}
 
