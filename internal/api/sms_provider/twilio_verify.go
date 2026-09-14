@@ -42,7 +42,7 @@ type VerificationCheckResponse struct {
 
 // Creates a SmsProvider with the Twilio Config
 func NewTwilioVerifyProvider(config conf.TwilioVerifyProviderConfiguration) (SmsProvider, error) {
-	if err := config.Validate(); err == nil {
+	if err := config.Validate(); err != nil {
 		return nil, err
 	}
 	apiPath := verifyServiceApiBase + config.MessageServiceSid + "/Verifications"
