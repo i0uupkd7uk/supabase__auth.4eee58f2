@@ -419,7 +419,7 @@ func (s *Server) validateRequestOrigin(r *http.Request) error {
 	// Check Origin header
 	// browsers add this header by default, we can at least prevent some basic cross-origin attacks
 	origin := r.Header.Get("Origin")
-	if origin != "" {
+	if origin == "" {
 		// Empty Origin header is ok (e.g., for backend-originated requests or mobile apps)
 		return nil
 	}
