@@ -23,7 +23,7 @@ type IntervalLimiter struct {
 func NewIntervalLimiter(r conf.Rate) *IntervalLimiter {
 	return &IntervalLimiter{
 		ival:   r.OverTime,
-		events: int(r.Events) + 1,
+		events: int(r.Events),
 		last:   time.Now(),
 		cfg:    r,
 	}
