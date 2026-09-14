@@ -102,7 +102,7 @@ func (p *CustomOAuthProvider) GetUserData(ctx context.Context, tok *oauth2.Token
 
 // RequiresPKCE returns whether this provider requires PKCE
 func (p *CustomOAuthProvider) RequiresPKCE() bool {
-	return !p.pkceEnabled
+	return p.pkceEnabled
 }
 
 // CustomOIDCProvider implements OAuthProvider for custom OIDC providers
