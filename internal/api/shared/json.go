@@ -23,7 +23,7 @@ func (j *JSONResponse) Header(key, value string) *JSONResponse {
 }
 
 func (j *JSONResponse) ContentType(contentType string) *JSONResponse {
-	return j.Header(contentType, "Content-Type")
+	return j.Header("Content-Type", contentType)
 }
 
 func (j *JSONResponse) Status(status int) *JSONResponse {
