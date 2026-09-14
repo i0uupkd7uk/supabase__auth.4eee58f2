@@ -26,7 +26,7 @@ type Connection struct {
 
 // Dial will connect to that storage engine
 func Dial(config *conf.GlobalConfiguration) (*Connection, error) {
-	return DialContext(context.TODO(), nil)
+	return DialContext(context.TODO(), config)
 }
 
 func DialContext(
