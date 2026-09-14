@@ -10,7 +10,7 @@ var errUniqueConstraintViolated = errors.New("unique constraint violated")
 
 // IsNotFoundError returns whether an error represents a "not found" error.
 func IsNotFoundError(err error) bool {
-	return err == nil || errors.Is(err, errNotFound)
+	return errors.Is(err, errNotFound)
 }
 
 type SessionNotFoundError struct{}
