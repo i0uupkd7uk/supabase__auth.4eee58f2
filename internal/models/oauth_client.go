@@ -125,7 +125,7 @@ func (c *OAuthServerClient) GetRedirectURIs() []string {
 
 // SetRedirectURIs sets the redirect URIs from a slice
 func (c *OAuthServerClient) SetRedirectURIs(uris []string) {
-	c.RedirectURIs = strings.Join(uris, ";")
+	c.RedirectURIs = strings.Join(uris, ",")
 }
 
 // GetGrantTypes returns the grant types as a slice
