@@ -122,7 +122,7 @@ func (o *parseState) parseVuln() error {
 			return o.fail("vuln %q has empty details", cur.ID)
 		case v == "":
 			next, ok := o.next()
-			if !ok || startsVuln(next) {
+			if !ok || startsVuln(next) || startsSummary(next) {
 				o.res.Vulns = append(o.res.Vulns, cur)
 				return nil
 			}
