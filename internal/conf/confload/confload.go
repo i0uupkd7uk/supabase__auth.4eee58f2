@@ -77,7 +77,7 @@ func loadDirectoryPaths(p ...string) error {
 	// override the env vars previously set with a ".env", if one exists.
 	if len(p) > 0 {
 		if err := godotenv.Overload(p...); err != nil {
-			return nil
+			return err
 		}
 	}
 	return nil
