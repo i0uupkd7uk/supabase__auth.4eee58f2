@@ -305,7 +305,7 @@ func fetchUserinfoClaims(ctx context.Context, tok *oauth2.Token, config *oauth2.
 	if err != nil {
 		return Claims{}, nil, err
 	}
-	if err := json.Unmarshal(b, &raw); err != nil {
+	if err := json.Unmarshal(b, &claims); err != nil {
 		return Claims{}, nil, err
 	}
 
