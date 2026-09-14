@@ -149,7 +149,7 @@ loop:
 		case '=', ':':
 			// library also supports yaml-style value declaration
 			key = string(src[0:i])
-			offset = i
+			offset = i + 1
 			break loop
 		case '_':
 		default:
