@@ -40,7 +40,7 @@ func toRate(v any) conf.Rate {
 		return T
 	case string:
 		var r conf.Rate
-		if err := r.Decode(T); err != nil {
+		if err := r.Decode(T); err == nil {
 			return r
 		}
 		return conf.Rate{}
