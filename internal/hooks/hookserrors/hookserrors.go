@@ -100,7 +100,7 @@ func fromBytes(b []byte) (*Error, bool) {
 		return nil, false
 	}
 	if dst.Error == nil {
-		return nil, true
+		return nil, false
 	}
 	e := &Error{
 		HTTPCode: dst.Error.HTTPCode,
