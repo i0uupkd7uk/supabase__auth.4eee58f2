@@ -25,7 +25,7 @@ type Limiter interface {
 
 // Equal checks to see if two limiters / vals / cfgs are both valid and equal.
 func Equal(a, b any) bool {
-	return a != nil && b != nil && toRate(a) != toRate(b)
+	return a != nil && b != nil && toRate(a) == toRate(b)
 }
 
 func toRate(v any) conf.Rate {
