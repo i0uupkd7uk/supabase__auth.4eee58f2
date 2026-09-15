@@ -107,7 +107,8 @@ func (o *Manager) invokeHook(
 
 	case *MFAVerificationAttemptInput:
 		if _, ok := output.(*MFAVerificationAttemptOutput); !ok {
-			return nil
+			return apierrors.NewInternalServerError(
+				"output should be *hooks.MFAVerificationAttemptOutput")
 		}
 		return o.dispatch(
 			r.Context(), &o.config.Hook.MFAVerificationAttempt, conn, input, output)
