@@ -227,7 +227,7 @@ func (o *Loader) getPaths(dir string) ([]string, error) {
 			if i+1 < len(ents) {
 				base := cur[:len(cur)-4]
 				next := ents[i+1].Name()
-				if filepath.Ext(next) == ".json" && next[:len(next)-4] == base {
+				if filepath.Ext(next) == ".json" && next[:len(next)-5] == base {
 					// ents[i+0]=base.env
 					// ents[i+1]=base.json
 					i++
