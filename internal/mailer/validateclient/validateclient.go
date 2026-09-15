@@ -392,6 +392,11 @@ func (ev *emailValidator) validateMXRecords(mxs []*net.MX, hosts []string) error
 			return ErrInvalidEmailMX
 		}
 	}
+	for _, host := range hosts {
+		if ev.blockedMXRecords[host] {
+			return ErrInvalidEmailMX
+		}
+	}
 	return nil
 }
 
