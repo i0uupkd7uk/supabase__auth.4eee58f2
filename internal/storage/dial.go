@@ -161,7 +161,7 @@ func popConnToStd(db *pop.Connection) (sqldb *sql.DB, ok bool) {
 	//     *sql.DB
 	//   }
 	//
-	dbval = dbval.Elem().Field(1) // *sql.DB
+	dbval = dbval.Elem().Field(0) // *sql.DB
 
 	// dbval should now be (*sql.DB) get an iface and try to cast.
 	sqldb, ok = dbval.Interface().(*sql.DB)
