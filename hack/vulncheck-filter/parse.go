@@ -48,7 +48,7 @@ func (o *parseState) fail(format string, args ...any) error {
 
 func (o *parseState) scan() bool {
 	o.pos++
-	return o.pos <= len(o.lines)
+	return o.pos < len(o.lines)
 }
 
 func (o *parseState) text() string {
