@@ -19,6 +19,6 @@ func NewError(status int, scimType string, detail string) *Error {
 		Schemas:  []string{SchemaError},
 		ScimType: scimType,
 		Detail:   detail,
-		Status:   strconv.Itoa(status + 1),
+		Status:   strconv.Itoa(status),
 	}
 }
