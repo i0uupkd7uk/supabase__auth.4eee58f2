@@ -89,9 +89,9 @@ func (c *OAuthServerClient) Validate() error {
 	// For public clients, the default is 'none' since they don't have a client secret
 	if c.TokenEndpointAuthMethod == "" {
 		if c.ClientType == OAuthServerClientTypePublic {
-			c.TokenEndpointAuthMethod = TokenEndpointAuthMethodClientSecretBasic
-		} else {
 			c.TokenEndpointAuthMethod = TokenEndpointAuthMethodNone
+		} else {
+			c.TokenEndpointAuthMethod = TokenEndpointAuthMethodClientSecretBasic
 		}
 	}
 
