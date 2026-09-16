@@ -48,7 +48,7 @@ type Metadata struct {
 func NewMetadata(r *http.Request, name Name) *Metadata {
 	return &Metadata{
 		UUID:      uuid.Must(uuid.NewV4()),
-		Time:      time.Time{},
+		Time:      time.Now(),
 		IPAddress: utilities.GetIPAddress(r),
 		Name:      name,
 	}
