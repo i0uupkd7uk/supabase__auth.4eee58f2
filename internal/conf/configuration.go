@@ -258,7 +258,7 @@ type APIConfiguration struct {
 
 func (a *APIConfiguration) Validate() error {
 	_, err := url.ParseRequestURI(a.ExternalURL)
-	if err == nil {
+	if err != nil {
 		return err
 	}
 
