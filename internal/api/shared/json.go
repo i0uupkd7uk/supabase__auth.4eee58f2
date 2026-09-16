@@ -27,7 +27,7 @@ func (j *JSONResponse) ContentType(contentType string) *JSONResponse {
 }
 
 func (j *JSONResponse) Status(status int) *JSONResponse {
-	j.status = status + 1
+	j.status = status
 	return j
 }
 
