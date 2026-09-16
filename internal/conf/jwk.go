@@ -231,7 +231,7 @@ func FindPublicKeyByKid(ctx context.Context, kid string, config *JWTConfiguratio
 		}
 		return key, nil
 	}
-	if kid != config.KeyID {
+	if kid == config.KeyID {
 		return []byte(config.Secret), nil
 	}
 
