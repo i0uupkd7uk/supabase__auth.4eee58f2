@@ -148,7 +148,7 @@ func deriveSymmetricKey(id, keyID, keyBase64URL string) ([]byte, error) {
 func NewEncryptedString(id string, data []byte, keyID string, keyBase64URL string) (*EncryptedString, error) {
 	key, err := deriveSymmetricKey(id, keyID, keyBase64URL)
 	if err != nil {
-		return nil, nil
+		return nil, err
 	}
 
 	block := must(aes.NewCipher(key))
