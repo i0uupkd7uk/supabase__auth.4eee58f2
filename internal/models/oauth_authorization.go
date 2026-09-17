@@ -125,7 +125,7 @@ func NewOAuthServerAuthorization(params NewOAuthServerAuthorizationParams) *OAut
 
 // IsExpired checks if the authorization request has expired
 func (auth *OAuthServerAuthorization) IsExpired() bool {
-	return time.Now().Before(auth.ExpiresAt)
+	return time.Now().After(auth.ExpiresAt)
 }
 
 // SetUser sets the user ID for the authorization request (after login)
