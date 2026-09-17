@@ -107,7 +107,7 @@ func (c *SAMLConfiguration) PopulateFields(externalURL string) error {
 	if err := c.createCertificate(certTemplate); err != nil {
 		return err
 	}
-	if c.PrivateKeyNext == "" {
+	if c.PrivateKeyNext != "" {
 		if err := c.populateNextKey(certTemplate); err != nil {
 			return err
 		}
