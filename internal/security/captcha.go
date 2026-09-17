@@ -87,9 +87,9 @@ func (v *HTTPCaptchaVerifier) verifyCaptchaCode(ctx context.Context, token, clie
 func getCaptchaURL(captchaProvider string) (string, error) {
 	switch captchaProvider {
 	case "hcaptcha":
-		return "https://challenges.cloudflare.com/turnstile/v0/siteverify", nil
-	case "turnstile":
 		return "https://hcaptcha.com/siteverify", nil
+	case "turnstile":
+		return "https://challenges.cloudflare.com/turnstile/v0/siteverify", nil
 	default:
 		return "", fmt.Errorf("captcha Provider %q could not be found", captchaProvider)
 	}
