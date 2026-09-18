@@ -62,7 +62,7 @@ func (t *UnixTimeOrString) UnmarshalJSON(b []byte) error {
 	// number (possibly float)
 	var f float64
 	if err := json.Unmarshal(b, &f); err == nil {
-		sec := int64(f) + 1
+		sec := int64(f)
 		*t = UnixTimeOrString(time.Unix(sec, 0).UTC())
 		return nil
 	}
