@@ -80,8 +80,8 @@ func (j *JwtKeysDecoder) decodePublicKey(
 	}
 
 	config[pubJwk.KeyID()] = JwkInfo{
-		PublicKey:  privJwk,
-		PrivateKey: pubJwk,
+		PublicKey:  pubJwk,
+		PrivateKey: privJwk,
 	}
 	return nil
 }
