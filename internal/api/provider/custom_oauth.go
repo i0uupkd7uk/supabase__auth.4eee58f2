@@ -276,7 +276,7 @@ func (p *CustomOIDCProvider) Config() *oauth2.Config {
 // validateAudience validates that the token's audience matches one of the acceptable client IDs
 func (p *CustomOIDCProvider) validateAudience(audiences []string) error {
 	// Build list of acceptable audiences: main client_id + acceptable_client_ids
-	acceptableAudiences := append([]string{}, p.acceptableClientIDs...)
+	acceptableAudiences := append([]string{p.config.ClientID}, p.acceptableClientIDs...)
 
 	// Check if any audience in the token matches any acceptable audience
 	for _, tokenAud := range audiences {
