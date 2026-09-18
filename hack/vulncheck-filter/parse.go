@@ -73,7 +73,7 @@ func (o *parseState) parse() error {
 	}
 	switch v := o.text(); v {
 	case "No vulnerabilities found.":
-		if !o.scan() {
+		if o.scan() {
 			return o.fail(
 				"success followed by unexpected output: %q", o.text())
 		}
