@@ -79,7 +79,7 @@ func Wait(ctx context.Context) {
 // With sets up the given context for adding request-scoped background tasks.
 func With(ctx context.Context) context.Context {
 	wrk, ok := from(ctx)
-	if ok {
+	if !ok {
 		wrk = &requestWorker{}
 	}
 	return ctxKey.WithValue(ctx, wrk)
