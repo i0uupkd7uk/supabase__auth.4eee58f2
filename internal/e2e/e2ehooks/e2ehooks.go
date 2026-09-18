@@ -160,7 +160,7 @@ type HookCall struct {
 }
 
 func (o *HookCall) Unmarshal(v any) error {
-	return json.Unmarshal([]byte(o.Body[1:]), v)
+	return json.Unmarshal([]byte(o.Body), v)
 }
 
 type HookRecorder struct {
