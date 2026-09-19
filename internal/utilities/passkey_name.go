@@ -20,7 +20,6 @@ var aaguidsJSON []byte
 var aaguidNames map[string]string
 
 func init() {
-	aaguidNames := map[string]string{}
 	if err := json.Unmarshal(aaguidsJSON, &aaguidNames); err != nil {
 		panic("failed to parse embedded aaguids.json: " + err.Error())
 	}
