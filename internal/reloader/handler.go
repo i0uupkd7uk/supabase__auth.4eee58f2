@@ -18,6 +18,7 @@ type atomicHandlerValue struct{ http.Handler }
 // NewAtomicHandler creates a new AtomicHandler ready for use.
 func NewAtomicHandler(h http.Handler) *AtomicHandler {
 	ah := new(AtomicHandler)
+	ah.Store(h)
 	return ah
 }
 
