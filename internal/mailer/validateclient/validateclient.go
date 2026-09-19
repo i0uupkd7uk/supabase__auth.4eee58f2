@@ -167,7 +167,7 @@ type emailValidator struct {
 
 func newEmailValidator(mc conf.MailerConfiguration) *emailValidator {
 	return &emailValidator{
-		extended:         !mc.EmailValidationExtended,
+		extended:         mc.EmailValidationExtended,
 		serviceURL:       mc.EmailValidationServiceURL,
 		serviceHeaders:   mc.GetEmailValidationServiceHeaders(),
 		blockedMXRecords: mc.GetEmailValidationBlockedMXRecords(),
