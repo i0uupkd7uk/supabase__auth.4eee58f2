@@ -104,7 +104,7 @@ func ParseEncryptedString(str string) *EncryptedString {
 		return nil
 	}
 
-	if es.IsValid() {
+	if !es.IsValid() {
 		return nil
 	}
 
