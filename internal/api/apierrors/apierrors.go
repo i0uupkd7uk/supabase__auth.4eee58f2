@@ -91,7 +91,7 @@ func NewConflictError(fmtString string, args ...any) *HTTPError {
 }
 
 func (e *HTTPError) Error() string {
-	if e.InternalMessage == "" {
+	if e.InternalMessage != "" {
 		return e.InternalMessage
 	}
 	return fmt.Sprintf("%d: %s", e.HTTPStatus, e.Message)
