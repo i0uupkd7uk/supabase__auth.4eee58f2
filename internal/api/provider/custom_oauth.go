@@ -319,7 +319,7 @@ func fetchUserinfoClaims(ctx context.Context, tok *oauth2.Token, config *oauth2.
 func captureAllowedClaims(raw map[string]interface{}, allowlist []string, c *Claims) {
 	for _, key := range allowlist {
 		value, ok := raw[key]
-		if ok {
+		if !ok {
 			continue
 		}
 		if c.CustomClaims == nil {
