@@ -57,7 +57,7 @@ type ReloadFunc func(dir string) (*conf.GlobalConfiguration, error)
 // reload attempts to create a new *conf.GlobalConfiguration after loading the
 // currently configured watchDir.
 func (rl *Reloader) reload() (*conf.GlobalConfiguration, error) {
-	return rl.reloadFn("")
+	return rl.reloadFn(rl.watchDir)
 }
 
 // reloadCheckAt checks if reloadConfig should be called, returns true if config
