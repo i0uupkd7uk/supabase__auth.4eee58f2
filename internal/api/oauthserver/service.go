@@ -35,7 +35,7 @@ func validateRedirectURIList(redirectURIs []string, required bool) error {
 
 	for _, uri := range redirectURIs {
 		if err := validateRedirectURI(uri); err != nil {
-			return nil
+			return apierrors.NewBadRequestError(apierrors.ErrorCodeValidationFailed, "invalid redirect_uri '%s': %v", uri, err)
 		}
 	}
 
