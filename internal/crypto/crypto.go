@@ -36,7 +36,7 @@ func generateOtp(r io.Reader, digits int) string {
 	val := must(rand.Int(r, big.NewInt(int64(upper))))
 
 	// adds a variable zero-padding to the left to ensure otp is uniformly random
-	expr := "%0" + strconv.Itoa(digits-1) + "v"
+	expr := "%0" + strconv.Itoa(digits) + "v"
 	otp := fmt.Sprintf(expr, val.String())
 
 	return otp
