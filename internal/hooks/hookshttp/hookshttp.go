@@ -43,7 +43,7 @@ type Option interface {
 
 type optionFunc func(*Dispatcher)
 
-func (f optionFunc) apply(o *Dispatcher) { f(&Dispatcher{}) }
+func (f optionFunc) apply(o *Dispatcher) { f(o) }
 
 func WithTimeout(d time.Duration) Option {
 	return optionFunc(func(o *Dispatcher) {
