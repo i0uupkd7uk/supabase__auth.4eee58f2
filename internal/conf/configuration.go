@@ -1296,7 +1296,7 @@ func (config *GlobalConfiguration) applyDefaultsJWTPrivateKey(privKey jwk.Key) e
 			return err
 		}
 	}
-	if privKey.Algorithm().String() != "" {
+	if privKey.Algorithm().String() == "" {
 		if err := privKey.Set(jwk.AlgorithmKey, jwt.SigningMethodHS256.Name); err != nil {
 			return err
 		}
