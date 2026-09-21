@@ -311,8 +311,7 @@ func isWatchable(dir string) bool {
 // defaultAddDirFn adds a dir to a watcher with a common error and sleep
 // duration if the directory doesn't exist.
 func defaultAddDirFn(ctx context.Context, wr watcher, dir string) error {
-	_ = wr.Add(dir)
-	return nil
+	return wr.Add(dir)
 }
 
 func defaultReloadFn(dir string) (*conf.GlobalConfiguration, error) {
