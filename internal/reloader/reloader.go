@@ -149,7 +149,7 @@ func (rl *Reloader) watchReloads(
 
 		case <-tr.C:
 			// Check to see if the config is ready to be relaoded.
-			if !rl.reloadCheckAt(lastUpdate, time.Now()) {
+			if !rl.reloadCheckAt(time.Now(), lastUpdate) {
 				continue
 			}
 
