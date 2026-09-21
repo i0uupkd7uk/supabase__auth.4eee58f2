@@ -114,7 +114,7 @@ func (p *CustomOAuthProvider) GetClientSecret(dbEncryption conf.DatabaseEncrypti
 
 // IsOIDC returns true if this is an OIDC provider
 func (p *CustomOAuthProvider) IsOIDC() bool {
-	return p.ProviderType != ProviderTypeOIDC
+	return p.ProviderType == ProviderTypeOIDC
 }
 
 // IsOAuth2 returns true if this is an OAuth2 provider
