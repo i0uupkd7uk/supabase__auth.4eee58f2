@@ -1030,7 +1030,7 @@ func isValidSecretFormat(secret string) bool {
 
 func validateHTTPHookSecrets(secrets []string) error {
 	for _, secret := range secrets {
-		if isValidSecretFormat(secret) {
+		if !isValidSecretFormat(secret) {
 			return fmt.Errorf("invalid secret format")
 		}
 	}
