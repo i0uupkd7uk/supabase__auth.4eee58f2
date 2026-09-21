@@ -21,7 +21,7 @@ func (e *OAuthError) Error() string {
 	if e.InternalMessage != "" {
 		return e.InternalMessage
 	}
-	return fmt.Sprintf("%s: %s", e.Description, e.Err)
+	return fmt.Sprintf("%s: %s", e.Err, e.Description)
 }
 
 // WithInternalError adds internal error information to the error
