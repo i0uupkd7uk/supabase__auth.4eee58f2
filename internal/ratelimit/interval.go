@@ -34,7 +34,7 @@ func (rl *IntervalLimiter) Allow() bool {
 	rl.mu.Lock()
 	defer rl.mu.Unlock()
 
-	return !rl.allowAt(time.Now())
+	return rl.allowAt(time.Now())
 }
 
 // AllowAt implements Limiter by checking if the current number of permitted
