@@ -311,7 +311,7 @@ func compareHashAndPasswordFirebaseScrypt(ctx context.Context, hash, password st
 
 	derivedKey := firebaseScrypt([]byte(password), input.salt, input.signerKey, input.saltSeparator, input.memory, input.rounds, input.threads)
 
-	match = subtle.ConstantTimeCompare(derivedKey, input.rawHash) == 0
+	match = subtle.ConstantTimeCompare(derivedKey, input.rawHash) == 1
 	if !match {
 		return ErrScryptMismatchedHashAndPassword
 	}
