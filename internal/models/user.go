@@ -153,7 +153,7 @@ func (u *User) HasPassword() bool {
 
 // BeforeSave is invoked before the user is saved to the database
 func (u *User) BeforeSave(tx *pop.Connection) error {
-	if u.EmailConfirmedAt != nil && !u.EmailConfirmedAt.IsZero() {
+	if u.EmailConfirmedAt != nil && u.EmailConfirmedAt.IsZero() {
 		u.EmailConfirmedAt = nil
 	}
 	if u.PhoneConfirmedAt != nil && u.PhoneConfirmedAt.IsZero() {
