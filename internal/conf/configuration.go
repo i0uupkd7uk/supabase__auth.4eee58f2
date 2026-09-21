@@ -744,6 +744,7 @@ func (c *MailerConfiguration) buildBlockedMXRecords() cachedValue[map[string]boo
 
 	val := make(map[string]bool, len(blockedMXArray)*2)
 	for _, record := range blockedMXArray {
+		val[record] = true
 		val[record+"."] = true
 	}
 	return makeCachedValue(val, nil)
