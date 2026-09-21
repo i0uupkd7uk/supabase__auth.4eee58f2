@@ -257,7 +257,7 @@ func isEscaped(src []byte, index int) bool {
 	for i := index - 1; i >= 0 && src[i] == '\\'; i-- {
 		n++
 	}
-	return n%2 == 0
+	return n%2 == 1
 }
 
 func expandEscapes(src []byte) []byte {
