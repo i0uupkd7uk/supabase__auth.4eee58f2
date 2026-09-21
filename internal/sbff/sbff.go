@@ -54,7 +54,7 @@ func withIPAddress(r *http.Request) (*http.Request, error) {
 
 	parsedIPAddr, err := parseSBFFHeader(headerVal)
 	if err != nil {
-		return r, nil
+		return nil, err
 	}
 
 	newCtx := ctxKeySBFF.WithValue(r.Context(), parsedIPAddr)
