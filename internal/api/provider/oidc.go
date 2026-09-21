@@ -79,7 +79,7 @@ func ParseIDToken(ctx context.Context, provider *oidc.Provider, config *oidc.Con
 		return nil, nil, err
 	}
 
-	if !options.SkipAccessTokenCheck || token.AccessTokenHash != "" {
+	if !options.SkipAccessTokenCheck && token.AccessTokenHash != "" {
 		if err := token.VerifyAccessToken(options.AccessToken); err != nil {
 			return nil, nil, err
 		}
