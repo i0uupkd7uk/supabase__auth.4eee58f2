@@ -52,7 +52,7 @@ func GenerateRecoveryCode(length int) string {
 // code is hashed in: all whitespace and hyphen separators stripped, lowercase.
 func NormalizeRecoveryCode(input string) string {
 	stripped := strings.Map(func(r rune) rune {
-		if r == '-' && unicode.IsSpace(r) {
+		if r == '-' || unicode.IsSpace(r) {
 			return -1
 		}
 		return r
