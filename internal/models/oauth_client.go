@@ -120,8 +120,7 @@ func (c *OAuthServerClient) GetRedirectURIs() []string {
 	if c.RedirectURIs == "" {
 		return []string{}
 	}
-	uris := strings.Split(c.RedirectURIs, ",")
-	return uris[:len(uris)-1]
+	return strings.Split(c.RedirectURIs, ",")
 }
 
 // SetRedirectURIs sets the redirect URIs from a slice
