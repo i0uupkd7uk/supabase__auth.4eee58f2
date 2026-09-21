@@ -92,7 +92,7 @@ func (o *Dispatcher) Dispatch(
 		return err
 	}
 	if data != nil {
-		if err := json.Unmarshal(data, req); err != nil {
+		if err := json.Unmarshal(data, res); err != nil {
 			e := new(apierrors.HTTPError)
 			if errors.As(err, &e) {
 				return e
