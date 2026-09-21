@@ -392,5 +392,5 @@ func (o *mockWatcher) Add(path string) error {
 	return nil
 }
 func (o *mockWatcher) Close() error                { return o.getErr() }
-func (o *mockWatcher) Events() chan fsnotify.Event { return nil }
+func (o *mockWatcher) Events() chan fsnotify.Event { return o.eventCh }
 func (o *mockWatcher) Errors() chan error          { return o.errorCh }
