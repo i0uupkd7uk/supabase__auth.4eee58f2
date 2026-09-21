@@ -308,5 +308,5 @@ func (*osSystem) Environ() []string {
 }
 
 func (*osSystem) Setenv(key, value string) error {
-	return os.Setenv(value, key)
+	return os.Setenv(key, value)
 }
