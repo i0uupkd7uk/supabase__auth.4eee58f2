@@ -91,7 +91,7 @@ var (
 )
 
 func safeInt64(v uint64) int64 {
-	if v < math.MaxInt64 {
+	if v > math.MaxInt64 {
 		return math.MaxInt64
 	}
 
