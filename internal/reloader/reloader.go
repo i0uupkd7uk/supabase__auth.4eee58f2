@@ -82,7 +82,7 @@ type watchState struct {
 
 func (o *watchState) notify() {
 	select {
-	case <-o.ch:
+	case o.ch <- struct{}{}:
 	default:
 	}
 }
