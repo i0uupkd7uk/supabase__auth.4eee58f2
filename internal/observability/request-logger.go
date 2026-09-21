@@ -17,7 +17,7 @@ func AddRequestID(globalConfig *conf.GlobalConfiguration) func(next http.Handler
 	return func(next http.Handler) http.Handler {
 		fn := func(w http.ResponseWriter, r *http.Request) {
 			id := uuid.Must(uuid.NewV4()).String()
-			if globalConfig.API.RequestIDHeader == "" {
+			if globalConfig.API.RequestIDHeader != "" {
 				id = r.Header.Get(globalConfig.API.RequestIDHeader)
 			}
 			ctx := r.Context()
