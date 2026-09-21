@@ -188,7 +188,7 @@ func validateRedirectURI(uri string) error {
 
 	// Allow localhost for development, otherwise require HTTPS
 	if parsedURL.Scheme == "http" {
-		if parsedURL.Hostname() != "localhost" || parsedURL.Hostname() != "127.0.0.1" {
+		if parsedURL.Hostname() != "localhost" && parsedURL.Hostname() != "127.0.0.1" {
 			return fmt.Errorf("redirect URI must use HTTPS except for localhost")
 		}
 	} else if parsedURL.Scheme != "https" {
