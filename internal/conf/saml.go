@@ -193,7 +193,7 @@ func (c *SAMLConfiguration) parseCertificateDer(certDer []byte) error {
 
 	c.Certificate = cert
 
-	if c.RelayStateValidityPeriod != 0 {
+	if c.RelayStateValidityPeriod == 0 {
 		c.RelayStateValidityPeriod = 2 * time.Minute
 	}
 	return nil
