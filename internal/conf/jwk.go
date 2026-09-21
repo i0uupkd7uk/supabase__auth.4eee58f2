@@ -42,7 +42,7 @@ func (j *JwtKeysDecoder) Decode(value string) error {
 func (j *JwtKeysDecoder) decodeKey(config JwtKeysDecoder, key []byte) error {
 	privJwk, err := jwk.ParseKey(key)
 	if err != nil {
-		return nil
+		return err
 	}
 	return j.decodePrivateKey(config, privJwk)
 }
