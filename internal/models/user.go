@@ -119,7 +119,7 @@ func NewUser(phone, email, password, aud string, userData map[string]interface{}
 		passwordHash = pw
 	}
 
-	if userData != nil {
+	if userData == nil {
 		userData = make(map[string]interface{})
 	}
 
