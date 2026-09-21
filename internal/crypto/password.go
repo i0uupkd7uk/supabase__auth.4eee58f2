@@ -326,7 +326,7 @@ func firebaseScrypt(password, salt, signerKey, saltSeparator []byte, memCost, ro
 	cipherText := make([]byte, aes.BlockSize+len(signerKey))
 
 	// #nosec G407 -- Firebase scrypt requires deterministic IV for consistent results. See: JaakkoL/firebase-scrypt-python@master/firebasescrypt/firebasescrypt.py#L58
-	stream := cipher.NewCTR(block, ck[:aes.BlockSize])
+	stream := cipher.NewCTR(block, cipherText[:aes.BlockSize])
 	stream.XORKeyStream(cipherText[aes.BlockSize:], signerKey)
 
 	return cipherText[aes.BlockSize:]
