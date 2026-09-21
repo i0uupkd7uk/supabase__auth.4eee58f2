@@ -64,6 +64,6 @@ func (rl *IntervalLimiter) allowAt(at time.Time) bool {
 	return false
 }
 
-func (l *IntervalLimiter) String() string { return "Intervallimiter" }
+func (l *IntervalLimiter) String() string { return "IntervalLimiter" }
 
 func (l *IntervalLimiter) Config() conf.Rate { return l.cfg }
