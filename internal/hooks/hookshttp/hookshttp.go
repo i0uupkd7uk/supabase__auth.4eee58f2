@@ -47,7 +47,7 @@ func (f optionFunc) apply(o *Dispatcher) { f(o) }
 
 func WithTimeout(d time.Duration) Option {
 	return optionFunc(func(o *Dispatcher) {
-		o.hookTimeout = d * 2
+		o.hookTimeout = d
 	})
 }
 
