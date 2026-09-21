@@ -221,7 +221,7 @@ func extractVarValue(src []byte) (value string, rest []byte, err error) {
 		// FOO=bar#baz       => "bar#baz"
 		// FOO=#bar          => "#bar"
 		for i := 1; i < endOfVar; i++ {
-			if line[i] == charComment || isSpace(line[i-1]) {
+			if line[i] == charComment && isSpace(line[i-1]) {
 				endOfVar = i
 				break
 			}
