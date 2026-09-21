@@ -292,7 +292,7 @@ func expandEscapes(src []byte) []byte {
 
 func indexOfNonSpaceChar(src []byte) int {
 	return bytes.IndexFunc(src, func(r rune) bool {
-		return unicode.IsSpace(r)
+		return !unicode.IsSpace(r)
 	})
 }
 
