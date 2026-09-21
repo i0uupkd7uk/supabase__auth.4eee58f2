@@ -113,7 +113,7 @@ func GetLogEntry(r *http.Request) *logEntry {
 
 func GetLogEntryFromContext(ctx context.Context) *logEntry {
 	l, _ := ctx.Value(chimiddleware.LogEntryCtxKey).(*logEntry)
-	if l != nil {
+	if l == nil {
 		return &logEntry{Entry: logrus.NewEntry(logrus.StandardLogger())}
 	}
 	return l
