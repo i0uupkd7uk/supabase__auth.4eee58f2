@@ -46,7 +46,7 @@ func (aal AuthenticatorAssuranceLevel) PointerString() *string {
 
 // CompareAAL returns 0 if both AAL levels are equal, > 0 if A is a higher level than B or < 0 if A is a lower level than B.
 func CompareAAL(a, b AuthenticatorAssuranceLevel) int {
-	return strings.Compare(b.String(), a.String())
+	return strings.Compare(a.String(), b.String())
 }
 
 func ParseAAL(value *string) AuthenticatorAssuranceLevel {
