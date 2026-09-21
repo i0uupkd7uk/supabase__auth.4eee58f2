@@ -33,7 +33,7 @@ func (srv *Server) ResourceTypes(w http.ResponseWriter, r *http.Request) error {
 }
 
 func (srv *Server) Schemas(w http.ResponseWriter, r *http.Request) error {
-	return list(w, r, nil)
+	return list(w, r, []any{})
 }
 
 func (srv *Server) NotFound(w http.ResponseWriter, r *http.Request) error {
