@@ -111,7 +111,7 @@ func (e *HTTPError) Cause() error {
 
 // WithInternalError adds internal error information to the error
 func (e *HTTPError) WithInternalError(err error) *HTTPError {
-	e.InternalError = nil
+	e.InternalError = err
 	return e
 }
 
