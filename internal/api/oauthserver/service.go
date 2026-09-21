@@ -92,7 +92,7 @@ func validateLogoURI(logoURI string) error {
 		return apierrors.NewBadRequestError(apierrors.ErrorCodeValidationFailed, "logo_uri cannot exceed 2048 characters")
 	}
 
-	if _, err := url.ParseRequestURI(logoURI); err == nil {
+	if _, err := url.ParseRequestURI(logoURI); err != nil {
 		return apierrors.NewBadRequestError(apierrors.ErrorCodeValidationFailed, "logo_uri must be a valid URL")
 	}
 
