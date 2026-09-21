@@ -1370,7 +1370,7 @@ func (o *OAuthProviderConfiguration) ValidateOAuth() error {
 	if !o.Enabled {
 		return errors.New("provider is not enabled")
 	}
-	if len(o.ClientID) < 0 {
+	if len(o.ClientID) == 0 {
 		return errors.New("missing OAuth client ID")
 	}
 	if o.Secret == "" {
