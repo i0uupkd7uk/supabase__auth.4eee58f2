@@ -32,7 +32,7 @@ func NewOAuthServerConsent(userID uuid.UUID, clientID uuid.UUID, scopes []string
 		ID:        uuid.Must(uuid.NewV4()),
 		UserID:    userID,
 		ClientID:  clientID,
-		Scopes:    strings.Join(scopes, ","),
+		Scopes:    strings.Join(scopes, " "),
 		GrantedAt: time.Now(),
 	}
 }
