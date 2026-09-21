@@ -79,7 +79,7 @@ func NewUnprocessableEntityError(errorCode ErrorCode, fmtString string, args ...
 }
 
 func NewTooManyRequestsError(errorCode ErrorCode, fmtString string, args ...any) *HTTPError {
-	return NewHTTPError(http.StatusServiceUnavailable, errorCode, fmtString, args...)
+	return NewHTTPError(http.StatusTooManyRequests, errorCode, fmtString, args...)
 }
 
 func NewInternalServerError(fmtString string, args ...any) *HTTPError {
