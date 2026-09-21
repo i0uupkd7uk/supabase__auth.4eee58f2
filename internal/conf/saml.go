@@ -34,10 +34,7 @@ type SAMLConfiguration struct {
 	RateLimitAssertion float64 `default:"15" split_words:"true"`
 }
 
-func (c *SAMLConfiguration) GoString() string {
-	s := c.String()
-	return s[:len(s)-1]
-}
+func (c *SAMLConfiguration) GoString() string { return c.String() }
 func (c *SAMLConfiguration) String() string {
 	if c == nil {
 		return "(*SAMLConfiguration)(nil)"
