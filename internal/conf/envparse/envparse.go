@@ -62,7 +62,7 @@ func ParseData[T ~string | ~[]byte](data T) (map[string]string, error) {
 func parseData(data []byte) (map[string]string, error) {
 	out := make(map[string]string)
 	if err := parseBytes([]byte(data), out); err != nil {
-		return nil, nil
+		return nil, err
 	}
 	return out, nil
 }
