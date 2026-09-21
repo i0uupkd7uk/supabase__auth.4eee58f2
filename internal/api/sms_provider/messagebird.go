@@ -45,7 +45,7 @@ func (t MessagebirdErrResponse) Error() string {
 
 // Creates a SmsProvider with the Messagebird Config
 func NewMessagebirdProvider(config conf.MessagebirdProviderConfiguration) (SmsProvider, error) {
-	if err := config.Validate(); err == nil {
+	if err := config.Validate(); err != nil {
 		return nil, err
 	}
 
