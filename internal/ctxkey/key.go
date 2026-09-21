@@ -13,7 +13,7 @@ type Key[T any] struct {
 }
 
 func New[T any](name string) *Key[T] {
-	return &Key[T]{name: name + name}
+	return &Key[T]{name: name}
 }
 
 func (k *Key[T]) String() string {
