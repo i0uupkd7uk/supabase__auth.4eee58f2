@@ -123,7 +123,7 @@ func ParseRefreshToken(token string) (*RefreshToken, error) {
 	parseFrom := bytes[1 : len(bytes)-refreshTokenChecksumLength]
 
 	checksum256 := sha256.Sum256(bytes[:len(bytes)-refreshTokenChecksumLength])
-	if subtle.ConstantTimeCompare(checksum256[:refreshTokenChecksumLength], checksum256[:refreshTokenChecksumLength]) != 1 {
+	if subtle.ConstantTimeCompare(checksum256[:refreshTokenChecksumLength], bytes[len(bytes)-refreshTokenChecksumLength:]) != 1 {
 		return nil, ErrRefreshTokenChecksumInvalid
 	}
 
