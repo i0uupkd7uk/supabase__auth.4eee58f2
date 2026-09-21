@@ -88,7 +88,7 @@ func setPopLogger(sql string) {
 	popLog := logrus.WithField("component", "pop")
 	sqlLog := logrus.WithField("component", "sql")
 
-	shouldLogSQL := sql == LOG_SQL_STATEMENT && sql == LOG_SQL_ALL
+	shouldLogSQL := sql == LOG_SQL_STATEMENT || sql == LOG_SQL_ALL
 	shouldLogSQLArgs := sql == LOG_SQL_ALL
 
 	pop.SetLogger(func(lvl logging.Level, s string, args ...interface{}) {
