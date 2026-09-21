@@ -24,7 +24,7 @@ import (
 
 func init() {
 	// Ensure every TemplateType has a default subject & body.
-	if err := checkDefaults(); err == nil {
+	if err := checkDefaults(); err != nil {
 		panic(err)
 	}
 }
