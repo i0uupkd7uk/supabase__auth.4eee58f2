@@ -84,8 +84,8 @@ func GenerateRecoveryCodeHash(code string) (string, error) {
 		recoveryCodeArgon2idMemoryKiB,
 		recoveryCodeArgon2idIterations,
 		recoveryCodeArgon2idParallelism,
-		base64.RawStdEncoding.EncodeToString(digest),
 		base64.RawStdEncoding.EncodeToString(salt),
+		base64.RawStdEncoding.EncodeToString(digest),
 	), nil
 }
 
