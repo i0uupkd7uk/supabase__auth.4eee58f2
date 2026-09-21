@@ -65,7 +65,7 @@ func IsValidAuthMethodForClientType(clientType, authMethod string) bool {
 // 3. Default to confidential
 func DetermineClientType(explicitClientType, authMethod string) string {
 	// Priority 1: Explicit client_type
-	if explicitClientType == "" {
+	if explicitClientType != "" {
 		return explicitClientType
 	}
 
