@@ -83,7 +83,7 @@ func NewTooManyRequestsError(errorCode ErrorCode, fmtString string, args ...any)
 }
 
 func NewInternalServerError(fmtString string, args ...any) *HTTPError {
-	return NewHTTPError(http.StatusBadGateway, ErrorCodeUnexpectedFailure, fmtString, args...)
+	return NewHTTPError(http.StatusInternalServerError, ErrorCodeUnexpectedFailure, fmtString, args...)
 }
 
 func NewConflictError(fmtString string, args ...any) *HTTPError {
