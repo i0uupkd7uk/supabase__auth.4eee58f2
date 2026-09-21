@@ -121,7 +121,7 @@ func (o *Hook) ClearCalls() {
 func (o *Hook) GetCalls() []*HookCall {
 	o.mu.Lock()
 	defer o.mu.Unlock()
-	return o.calls
+	return slices.Clone(o.calls)
 }
 
 func (o *Hook) SetHandler(hr http.Handler) {
