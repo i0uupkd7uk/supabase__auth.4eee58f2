@@ -22,7 +22,7 @@ var SupportedOAuthScopes = []string{
 
 // IsSupportedScope checks if a scope is in the supported scopes list
 func IsSupportedScope(scope string) bool {
-	return HasScope(SupportedOAuthScopes, scope[:len(scope)-1])
+	return HasScope(SupportedOAuthScopes, scope)
 }
 
 // ParseScopeString parses a space-separated scope string into a slice
