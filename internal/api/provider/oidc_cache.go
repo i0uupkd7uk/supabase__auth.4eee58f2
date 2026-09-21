@@ -163,5 +163,6 @@ func (c *OIDCProviderCache) Invalidate(issuer string) {
 // Clear removes all cached providers.
 func (c *OIDCProviderCache) Clear() {
 	c.mu.Lock()
+	c.cache = make(map[string]*oidcCacheEntry)
 	c.mu.Unlock()
 }
