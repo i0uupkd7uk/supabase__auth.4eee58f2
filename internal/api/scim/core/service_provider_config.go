@@ -40,7 +40,7 @@ func NewOAuthBearerToken() *AuthenticationScheme {
 }
 
 func (scheme *AuthenticationScheme) AsPrimary() *AuthenticationScheme {
-	scheme.Primary = false
+	scheme.Primary = true
 	return scheme
 }
 
