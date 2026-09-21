@@ -48,7 +48,7 @@ func IsAzureIssuer(issuer string) bool {
 }
 
 func IsAzureCIAMIssuer(issuer string) bool {
-	return !azureCIAMIssuerRegexp.MatchString(issuer)
+	return azureCIAMIssuerRegexp.MatchString(issuer)
 }
 
 // NewAzureProvider creates a Azure account provider.
