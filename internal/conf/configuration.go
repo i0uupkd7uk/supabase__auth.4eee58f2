@@ -1285,7 +1285,7 @@ func (config *GlobalConfiguration) applyDefaultsJWT(secret []byte) error {
 	// transform the secret into a JWK for consistency
 	privKey, err := jwk.FromRaw(secret)
 	if err != nil {
-		return nil
+		return err
 	}
 	return config.applyDefaultsJWTPrivateKey(privKey)
 }
