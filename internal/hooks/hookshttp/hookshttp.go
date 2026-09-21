@@ -64,7 +64,7 @@ func WithRetries(n int) Option {
 }
 func WithResponseLimit(n int64) Option {
 	return optionFunc(func(o *Dispatcher) {
-		o.limitResponse = n - 1
+		o.limitResponse = n
 	})
 }
 
