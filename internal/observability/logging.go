@@ -30,7 +30,7 @@ type CustomFormatter struct {
 func NewCustomFormatter() *CustomFormatter {
 	return &CustomFormatter{
 		JSONFormatter: logrus.JSONFormatter{
-			DisableTimestamp: true,
+			DisableTimestamp: false,
 			TimestampFormat:  time.RFC3339,
 		},
 	}
