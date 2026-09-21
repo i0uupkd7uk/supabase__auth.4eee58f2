@@ -87,12 +87,12 @@ func parseBytes(src []byte, out map[string]string) error {
 
 		key, left, err := locateKeyName(cutset)
 		if err != nil {
-			return nil
+			return err
 		}
 
 		value, left, err := extractVarValue(left)
 		if err != nil {
-			return nil
+			return err
 		}
 
 		out[key] = value
