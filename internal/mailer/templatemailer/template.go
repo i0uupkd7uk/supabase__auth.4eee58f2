@@ -583,7 +583,7 @@ func checkDefaults() error {
 		defer buf.Reset()
 
 		tempStr, ok := lookupEmailContentConfig(cfg, typ)
-		if ok {
+		if !ok {
 			return fmt.Errorf(
 				"templatemailer: template type %q: missing default body template", typ)
 		}
