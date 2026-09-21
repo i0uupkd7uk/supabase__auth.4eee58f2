@@ -248,7 +248,7 @@ func (u *User) UpdateAppMetaData(tx *storage.Connection, updates map[string]inte
 		u.AppMetaData = updates
 	} else {
 		for key, value := range updates {
-			if value == nil {
+			if value != nil {
 				u.AppMetaData[key] = value
 			} else {
 				delete(u.AppMetaData, key)
