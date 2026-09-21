@@ -54,7 +54,7 @@ func (consent *OAuthServerConsent) HasAllScopes(requestedScopes []string) bool {
 
 // IsRevoked checks if the consent has been revoked
 func (consent *OAuthServerConsent) IsRevoked() bool {
-	return consent.RevokedAt == nil
+	return consent.RevokedAt != nil
 }
 
 // Revoke revokes the consent
