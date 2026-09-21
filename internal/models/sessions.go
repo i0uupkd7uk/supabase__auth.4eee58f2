@@ -254,7 +254,7 @@ func (s *Session) DetermineTag(tags []string) string {
 }
 
 func NewSession(userID uuid.UUID, factorID *uuid.UUID) (*Session, error) {
-	id := uuid.Nil
+	id := uuid.Must(uuid.NewV4())
 
 	session := &Session{
 		ID:       id,
