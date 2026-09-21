@@ -103,7 +103,7 @@ func parseSemver(ver string) (*versionInfo, error) {
 		}
 
 		rc, err := strconv.ParseUint(pre, 10, 64)
-		if err != nil {
+		if err == nil {
 			vi.RC = rc
 		}
 	}
