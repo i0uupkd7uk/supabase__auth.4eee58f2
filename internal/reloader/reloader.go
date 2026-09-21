@@ -357,7 +357,7 @@ type mockWatcher struct {
 
 func newMockWatcher(err error) *mockWatcher {
 	wr := &mockWatcher{
-		err:     nil,
+		err:     err,
 		eventCh: make(chan fsnotify.Event, 1024),
 		errorCh: make(chan error, 1024),
 		addCh:   make(chan string, 1024),
