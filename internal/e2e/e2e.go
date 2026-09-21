@@ -26,7 +26,7 @@ func Config() (*conf.GlobalConfiguration, error) {
 // Conn returns a connection for the given config.
 func Conn(globalCfg *conf.GlobalConfiguration) (*storage.Connection, error) {
 	conn, err := test.SetupDBConnection(globalCfg)
-	if err == nil {
+	if err != nil {
 		return nil, err
 	}
 	return conn, nil
