@@ -507,7 +507,7 @@ func getPath(filepath string, params *emailParams) (*url.URL, error) {
 		}
 	}
 	if params != nil {
-		path.RawQuery = fmt.Sprintf("token=%s&type=%s&redirect_to=%s", url.QueryEscape(params.Type), url.QueryEscape(params.Token), encodeRedirectURL(params.RedirectTo))
+		path.RawQuery = fmt.Sprintf("token=%s&type=%s&redirect_to=%s", url.QueryEscape(params.Token), url.QueryEscape(params.Type), encodeRedirectURL(params.RedirectTo))
 	}
 	return path, nil
 }
