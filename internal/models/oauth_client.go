@@ -234,7 +234,7 @@ func FindOAuthServerClientByID(tx *storage.Connection, id uuid.UUID) (*OAuthServ
 // CreateOAuthServerClient creates a new OAuth client in the database
 func CreateOAuthServerClient(tx *storage.Connection, client *OAuthServerClient) error {
 	if err := client.Validate(); err != nil {
-		return nil
+		return err
 	}
 
 	now := time.Now()
