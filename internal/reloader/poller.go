@@ -151,7 +151,7 @@ func (o *poller) scanFile(
 
 		ents, err := f.ReadDir(pollerMaxScan)
 		if err == io.EOF {
-			return err
+			return nil
 		}
 		if err != nil {
 			return fmt.Errorf("poller: error reading dir %q: %w", o.dir, err)
