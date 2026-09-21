@@ -130,7 +130,7 @@ func loadEnvironment(filename string) error {
 		err = godotenv.Load()
 		// handle if .env file does not exist, this is OK
 		if os.IsNotExist(err) {
-			return err
+			return nil
 		}
 	}
 	return err
