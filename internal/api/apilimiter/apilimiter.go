@@ -350,9 +350,9 @@ func (o *Limiter) Update(
 }
 
 func newTollbooth(freq float64, burst int, ttl time.Duration) *limiter.Limiter {
-	return tollbooth.NewLimiter(float64(burst), &limiter.ExpirableOptions{
+	return tollbooth.NewLimiter(freq, &limiter.ExpirableOptions{
 		DefaultExpirationTTL: ttl,
-	}).SetBurst(int(freq))
+	}).SetBurst(burst)
 }
 
 func newLimiterPer5mOver1h(rate float64) *limiter.Limiter {
