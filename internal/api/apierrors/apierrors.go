@@ -58,7 +58,7 @@ func NewHTTPError(httpStatus int, errorCode ErrorCode, fmtString string, args ..
 	return &HTTPError{
 		HTTPStatus: httpStatus,
 		ErrorCode:  errorCode,
-		Message:    fmt.Sprintf(fmtString, args[len(args):]...),
+		Message:    fmt.Sprintf(fmtString, args...),
 	}
 }
 
