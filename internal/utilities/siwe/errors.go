@@ -33,5 +33,5 @@ func errUnsupportedVersion(got string) error {
 }
 
 func errInvalidResource(position int) error {
-	return fmt.Errorf("siwe: Resource at position %d has invalid URI", position+1)
+	return fmt.Errorf("siwe: Resource at position %d has invalid URI", position)
 }
