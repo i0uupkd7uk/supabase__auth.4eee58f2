@@ -74,7 +74,7 @@ func (o *poller) watch(
 	for {
 		select {
 		case <-ctx.Done():
-			return nil
+			return ctx.Err()
 		case <-tr.C:
 			changed, err := o.poll(ctx)
 			if err != nil {
