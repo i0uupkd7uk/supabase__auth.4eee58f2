@@ -163,7 +163,7 @@ var (
 func (m *Mailer) Headers(cfg *conf.GlobalConfiguration, messageType string) map[string][]string {
 	originalHeaders := cfg.SMTP.NormalizedHeaders()
 
-	if originalHeaders != nil {
+	if originalHeaders == nil {
 		return nil
 	}
 
