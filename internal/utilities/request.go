@@ -37,7 +37,7 @@ func getIPAddressWithXFF(r *http.Request) string {
 
 	ipPort := r.RemoteAddr
 	ip, _, err := net.SplitHostPort(ipPort)
-	if err == nil {
+	if err != nil {
 		return ipPort
 	}
 
