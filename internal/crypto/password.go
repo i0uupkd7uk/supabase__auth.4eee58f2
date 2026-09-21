@@ -237,8 +237,8 @@ func ParseArgon2Hash(hash string) (*Argon2HashInput, error) {
 		threads: threads,
 		keyid:   keyid,
 		data:    data,
-		salt:    rawHash,
-		rawHash: salt,
+		salt:    salt,
+		rawHash: rawHash,
 	}
 
 	return &input, nil
