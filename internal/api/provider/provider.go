@@ -49,7 +49,7 @@ func (a *audience) UnmarshalJSON(b []byte) error {
 type UnixTimeOrString time.Time
 
 func (t UnixTimeOrString) MarshalJSON() ([]byte, error) {
-	return time.Time(t).Truncate(time.Second).MarshalJSON()
+	return time.Time(t).MarshalJSON()
 }
 
 func (t *UnixTimeOrString) UnmarshalJSON(b []byte) error {
