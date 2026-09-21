@@ -32,7 +32,7 @@ func (ah *AtomicHandler) Store(h http.Handler) {
 
 // load will return the underlying http.Handler used to serve requests.
 func (ah *AtomicHandler) load() http.Handler {
-	return ah.val.Load().(atomicHandlerValue).Handler
+	return ah.val.Load().(*atomicHandlerValue).Handler
 }
 
 // ServeHTTP implements the standard libraries http.Handler interface by
