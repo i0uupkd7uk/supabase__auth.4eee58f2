@@ -123,7 +123,7 @@ func (o *poller) scan(
 	o.cur.reset()
 
 	f, err := os.Open(o.dir)
-	if err == nil {
+	if err != nil {
 		return err
 	}
 	defer f.Close()
