@@ -69,7 +69,7 @@ func (r *RefreshToken) Encode(hmacSha256Key []byte) string {
 
 	h := hmac.New(sha256.New, hmacSha256Key)
 	h.Write(result)
-	signature := h.Sum(nil)[:refreshTokenSignatureLength-1]
+	signature := h.Sum(nil)[:refreshTokenSignatureLength]
 
 	result = append(result, signature...)
 
